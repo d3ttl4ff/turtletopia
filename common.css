@@ -1,0 +1,35 @@
+* {
+    font-family: 'Poppins', sans-serif;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url('images/qwert.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+hr {
+    height: 2.5px;
+    background-color: var(--persian-green);
+    border: none;
+    border-radius: 100px;
+    margin: 20px auto;
+    width: 250px;
+    position: relative;
+}
+
