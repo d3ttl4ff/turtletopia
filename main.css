@@ -526,6 +526,12 @@ header label:hover{
     transition: opacity 0.5s, transform 0.5s;
 }
 
+.third-section-item>div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
 .third-section-item:hover>div,
 .third-section-item:active>div {
     opacity: 1;
@@ -552,6 +558,10 @@ header label:hover{
     .third-section-container {
         grid-template-columns: 1fr 1fr;
         row-gap: 50px;
+    }
+
+    .third-section-text{
+        font-size: 18px;
     }
 }
 
