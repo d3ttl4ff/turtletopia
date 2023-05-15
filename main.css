@@ -2,7 +2,7 @@
     --primary-white: rgb(239, 239, 239);
     --primary-black: rgb(28, 27, 27);
     --primary-grey: rgb(106, 106, 106);
-    --persian-green: rgb(70, 160, 137);
+    --persian-green: rgb(62, 140, 143);
     --mint: rgba(107, 189, 153, 1);
     --celadon: rgba(174, 207, 164, 1);
     --tea-green: rgba(196, 232, 194, 1);
@@ -13,51 +13,129 @@
 }
 
 /**************** header ****************/
-.header {
-    background-color: var(--primary-white);
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: none;
+header{
+    background: var(--primary-white);
+    position: fixed;
+    top: 0;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
-}
-
-.nav-bar{
+    padding: 0px 7%;
     display: flex;
+    justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
 }
 
-.nav-bar ul{
-    position: relative;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-bar ul li {
+header .nav-bar ul{
     list-style: none;
+    margin: 0;
 }
 
-.nav-bar ul li a{
+header .nav-bar ul li {
     position: relative;
+    float: left;
+}
+
+ header .nav-bar ul li a {
+    display: block;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.96em;
     color: rgb(32, 32, 32);
     text-transform: uppercase;
+    padding: 14px;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease-out;
+}
+
+header .nav-bar ul li a:hover{
+    background: var(--persian-green);
+    color: var(--primary-white);
+}
+
+header .nav-bar ul li ul{
+    position: absolute;
+    left: 0;
+    padding: 0;
+    width: 125px;
+    background: var(--primary-white);
+    display: none;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+header .nav-bar ul li ul li{
+    width: 100%;
+}
+
+header .nav-bar ul li:focus-within > ul,
+header .nav-bar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    cursor: pointer;
+    display: none;
+    transition: color 0.3s ease-in;
+    text-transform: uppercase;
+}
+
+header label:hover{
+    color: var(--persian-green);
+}
+
+@media only screen and (max-width: 800px) {
+    header{
+        padding: 14px;
+    }
+
+    header label{
+        display: initial;
+    }
+
+    header .nav-bar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-white);
+        display: none;
+    }
+
+    header .nav-bar ul li{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .nav-bar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+
+    header .nav-bar ul li ul li{
+        background: var(--primary-white);
+    }
+
+    #menu-bar:checked ~ .nav-bar{
+        display: initial;
+    }
+
 }
 /**************** header ****************/
 
 /**************** main viewport ****************/
 .main-viewport{
-    background-color: black;
+    background-color: var(--primary-black);
     position: relative;
+    border: none;
     top: 0;
     right: 0;
     bottom: 0;
@@ -69,6 +147,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    margin-top: auto;
 }
 
 .main-viewport::before {
@@ -85,11 +164,11 @@
 
 .main-viewport-image{
     object-fit: cover;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: block;
 }
-/**************** main viewport ****************/
 
-/**************** main viewport - header ****************/
 .main-viewport-header{
     position: absolute;
     color: var(--primary-white);
@@ -109,11 +188,6 @@
     transition: letter-spacing 0.3s ease-in-out;
 }
 
-.main-viewport-header h2:hover{
-    letter-spacing: 20px;
-    cursor: pointer;
-}
-
 .main-viewport-header ol{
     color: #ffffff;
     z-index: 1;
@@ -121,9 +195,29 @@
     bottom: 28px;
     display: block;
 }   
-/**************** main viewport - header ****************/
 
-/**************** main viewport - scroll-button ****************/
+@media screen and (max-width: 1140px) {
+    .main-viewport-header {
+        margin-top: 25%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main-viewport-header {
+        margin-top: 25%;
+    }
+
+    .main-viewport-header h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .main-viewport-header h2:hover {
+        letter-spacing: 20px;
+        }
+}
+
 .scroll-btn {
     border: none;
     bottom: 300px;
@@ -175,15 +269,14 @@
         transform: translateY(0);
     }
 }
-
-/**************** main viewport - scroll-button ****************/
+/**************** main viewport ****************/
 
 /**************** introduction ****************/
 .introduction{
     background-color: var(--primary-white);
     display: block;
     margin: 0;
-    padding: 80px 25px;
+    padding: 60px 25px 80px 25px;
     margin-bottom: 80px;
 }
 
@@ -735,7 +828,6 @@ footer {
     background-color: rgb(255, 255, 255);
     padding: 50px;
     font-size: 0.9rem;
-    display: block;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -743,14 +835,14 @@ footer {
 }
 
 .footer-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0;
     display: flex;
     text-align: center;
 }
 
 .footer-logo{
-    margin-right: 100px;
+    margin-right: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -768,6 +860,11 @@ footer {
 .footer-logo .span-2:hover{
     color: var(--persian-green);
     cursor: pointer;
+}
+
+.footer-middle{
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer-list{
@@ -805,7 +902,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 60px;
+    /* margin-left: 60px; */
 }
 
 .footer-social-container .footer-social-list{
