@@ -14,125 +14,6 @@
     --box-shadow-main: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-/**************** header ****************/
-header{
-    background: var(--primary-white);
-    position: fixed;
-    top: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0px 7%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-
-    z-index: 100;
-}
-
-header .nav-bar ul{
-    list-style: none;
-    margin: 0;
-}
-
-header .nav-bar ul li {
-    position: relative;
-    float: left;
-}
-
- header .nav-bar ul li a {
-    display: block;
-    text-decoration: none;
-    font-size: 0.96em;
-    color: rgb(32, 32, 32);
-    text-transform: uppercase;
-    padding: 14px;
-    letter-spacing: 0.2em;
-    transition: all 0.4s ease-out;
-}
-
-header .nav-bar ul li a:hover{
-    background: var(--persian-green);
-    color: var(--primary-white);
-}
-
-header .nav-bar ul li ul{
-    position: absolute;
-    left: 0;
-    padding: 0;
-    width: 125px;
-    background: var(--primary-white);
-    display: none;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-}
-
-header .nav-bar ul li ul li{
-    width: 100%;
-}
-
-header .nav-bar ul li:focus-within > ul,
-header .nav-bar ul li:hover > ul{
-    display: initial;
-}
-
-#menu-bar {
-    display: none;
-}
-
-header label {
-    cursor: pointer;
-    display: none;
-    transition: color 0.3s ease-in;
-    text-transform: uppercase;
-}
-
-header label:hover{
-    color: var(--persian-green);
-}
-
-@media only screen and (max-width: 800px) {
-    header{
-        padding: 14px;
-    }
-
-    header label{
-        display: initial;
-    }
-
-    header .nav-bar{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--primary-white);
-        display: none;
-    }
-
-    header .nav-bar ul li{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    header .nav-bar ul li ul{
-        position: relative;
-        width: 100%;
-    }
-
-    header .nav-bar ul li ul li{
-        background: var(--primary-white);
-    }
-
-    #menu-bar:checked ~ .nav-bar{
-        display: initial;
-    }
-
-}
-/**************** header ****************/
-
 /**************** categories main viewport ****************/
 .main-viewport{
     background-color: var(--primary-black);
@@ -148,7 +29,7 @@ header label:hover{
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
     margin-top: auto;
 }
 
@@ -197,28 +78,6 @@ header label:hover{
     bottom: 28px;
     display: block;
 }   
-
-@media screen and (max-width: 1140px) {
-    .main-viewport-header {
-        margin-top: 25%;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .main-viewport-header {
-        margin-top: 25%;
-    }
-
-    .main-viewport-header h2 {
-        font-size: 30px;
-    }
-}
-
-@media screen and (min-width: 641px) {
-    .main-viewport-header h2:hover {
-        letter-spacing: 20px;
-        }
-}
 
 .scroll-btn {
     border: none;
@@ -271,6 +130,28 @@ header label:hover{
         transform: translateY(0);
     }
 }
+
+@media screen and (max-width: 1140px) {
+    .main-viewport-header {
+        margin-top: 25%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main-viewport-header {
+        margin-top: 25%;
+    }
+
+    .main-viewport-header h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .main-viewport-header h2:hover {
+        letter-spacing: 20px;
+    }
+}
 /**************** categories main viewport ****************/
 
 /**************** categories first section ****************/
@@ -295,10 +176,17 @@ header label:hover{
     justify-content: center;
 }
 
-.categories-first-section-item img{
-    width: 400px;
-    height: 400px;
+.categories-first-section-item img,
+.categories-first-section-item iframe {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
     box-shadow: var(--box-shadow-main);
+}
+
+.categories-first-section-item iframe {
+    border: 0;
 }
 
 .categories-first-section-item-description{
@@ -323,13 +211,6 @@ header label:hover{
     font-size: 16px;
 }
 
-.categories-first-section-item iframe {
-    width: 400px;
-    height: 400px;
-    border: 0;
-    box-shadow: var(--box-shadow-main);
-}
-
 .categories-first-section-description{
     display: flex;
     justify-content: center;
@@ -345,13 +226,13 @@ header label:hover{
 .categories-second-section,
 .categories-second-section-2 {
     background-color: var(--persian-green);
+    color: var(--primary-white);
     padding: 50px;
     font-size: 0.9rem;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--primary-white);
 }
 
 .categories-second-section-2{
@@ -364,10 +245,17 @@ header label:hover{
     justify-content: center;
 }
 
-.categories-second-section-item img {
-    width: 400px;
-    height: 400px;
+.categories-second-section-item img,
+.categories-second-section-item iframe {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
     box-shadow: var(--box-shadow-main);
+}
+
+.categories-second-section-item iframe {
+    border: 0;
 }
 
 .categories-second-section-item-description {
@@ -390,13 +278,6 @@ header label:hover{
 
 .categories-second-section-item h3 {
     font-size: 16px;
-}
-
-.categories-second-section-item iframe {
-    width: 400px;
-    height: 400px;
-    border: 0;
-    box-shadow: var(--box-shadow-main);
 }
 
 .categories-second-section-2 hr{
@@ -436,10 +317,17 @@ header label:hover{
     justify-content: center;
 }
 
-.categories-third-section-item img {
-    width: 400px;
-    height: 400px;
+.categories-third-section-item img,
+.categories-third-section-item iframe{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
     box-shadow: var(--box-shadow-main);
+}
+
+.categories-third-section-item iframe {
+    border: 0;
 }
 
 .categories-third-section-item-description {
@@ -448,6 +336,8 @@ header label:hover{
     justify-content: center;
     text-align: center;
     align-items: center;
+    max-width: 400px;
+    width: 400px;
 }
 
 .categories-third-section-item h2,
@@ -464,13 +354,6 @@ header label:hover{
     font-size: 16px;
 }
 
-.categories-third-section-item iframe {
-    width: 400px;
-    height: 400px;
-    border: 0;
-    box-shadow: var(--box-shadow-main);
-}
-
 .categories-third-section-description {
     display: flex;
     justify-content: center;
@@ -481,6 +364,34 @@ header label:hover{
     font-size: 16px;
 }
 /**************** categories third section ****************/
+
+/**************** common ****************/
+@media only screen and (max-width: 1141px) {
+    .categories-first-section-container,
+    .categories-second-section-container,
+    .categories-third-section-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .categories-first-section-item,
+    .categories-second-section-item,
+    .categories-third-section-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .categories-first-section-item-description,
+    .categories-second-section-item-description,
+    .categories-third-section-item-description {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+/**************** common ****************/
 
 /**************** categories third section ****************/
 .table-section{
@@ -506,6 +417,10 @@ table {
     transition: all 0.3s ease;
 }
 
+.main-table{
+    max-width: 990px;
+}
+
 table th,
 table td {
     text-align: center;
@@ -524,10 +439,6 @@ thead tr{
 
 tbody tr:nth-child(odd) {
     background-color: rgb(223, 223, 223);
-}
-
-@media only screen and (max-width: 1140px){
-
 }
 
 @media only screen and (max-width: 800px) {
@@ -552,8 +463,8 @@ tbody tr:nth-child(odd) {
     }
 
     table td{
-        text-align: right;
-        display: flex;
+        text-align: left;
+        display: block;
     }
 
     table td:before{
@@ -572,116 +483,3 @@ tbody tr:nth-child(odd) {
     }
 }
 /**************** categories third section ****************/
-
-/****************  footer ****************/
-footer {
-    background-color: rgb(255, 255, 255);
-    padding: 50px;
-    font-size: 0.9rem;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-container {
-    max-width: 1000px;
-    margin: 0;
-    display: flex;
-    text-align: center;
-}
-
-.footer-logo{
-    margin-right: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-logo h1{
-    color: var(--primary-grey);
-}
-
-.footer-logo .span-1, .span-2 {
-    transition: all 0.5s ease;
-}
-
-.footer-logo .span-1:hover,
-.footer-logo .span-2:hover{
-    color: var(--persian-green);
-    cursor: pointer;
-}
-
-.footer-middle{
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-list{
-    width: 25%;
-    padding: 0 15px;
-    margin-right: 40px;
-}
-
-.footer-list h4{
-    font-size: 12px;
-    margin-bottom: 10px;
-    position: relative;
-    color: var(--primary-grey);
-}
-
-.footer-list ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.footer-list ul li a {
-    font-size: 16px;
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s ease;
-    color: var(--primary-grey);
-}
-
-.footer-list ul li a:hover {
-    color: var(--persian-green);
-    padding-left: 5px;
-}
-
-.footer-social-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-left: 60px; */
-}
-
-.footer-social-container .footer-social-list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-social-container .footer-social-list a{
-    display: inline-block;
-    margin: 8px 10px 10px 0;
-    text-align: center;
-    line-height: 40px;
-    transition: all 0.5s ease;
-}
-
-.footer-social-container .footer-social-list img {
-    filter: invert(30%);
-    width: 25px;
-    height: 25px;
-    transition: all 0.2s ease;
-}
-
-.footer-social-container a:hover img {
-    width: 29px;
-    height: 29px;
-}
-
-.footer-social-container a:active img {
-    transform: scale(0.5);
-}
-/****************  footer ****************/
