@@ -15,7 +15,7 @@
 /**************** header ****************/
 header{
     background: var(--primary-white);
-    position: sticky;
+    position: fixed;
     top: 0;
     top: 0;
     left: 0;
