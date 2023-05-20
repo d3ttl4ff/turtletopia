@@ -10,6 +10,8 @@
     --line-height: 28px;
     --title-margin-bottom: 50px;
     --title-font-size: 20px;
+
+    --box-shadow-main: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 /**************** header ****************/
@@ -187,6 +189,10 @@ header label:hover{
     font-weight: 300;
     text-align: center;
     margin-top: 10%;
+}
+
+.main-viewport-header-text span{
+    text-transform: capitalize;
 }
 
 .main-viewport-header h2 {
@@ -402,9 +408,7 @@ header label:hover{
     margin-top: 30px;
     padding-inline-start: 0;
     -webkit-padding-start: 0;
-    /* for Chrome and Safari */
     -moz-padding-start: 0;
-    /* for Firefox */
 }
 
 .second-section li {
@@ -982,5 +986,4 @@ footer {
         margin-right: 0;
     }
 }
-
 /****************  footer ****************/

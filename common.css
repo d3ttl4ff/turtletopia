@@ -1,12 +1,13 @@
 * {
     font-family: 'Poppins', sans-serif;
-    /* box-sizing: border-box; */
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     margin: 0;
+
+    /* box-sizing: border-box; */
 }
 
 html,
