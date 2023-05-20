@@ -19,7 +19,6 @@ header{
     background: var(--primary-white);
     position: fixed;
     top: 0;
-    top: 0;
     left: 0;
     right: 0;
     padding: 0px 7%;
@@ -90,7 +89,7 @@ header label:hover{
     color: var(--persian-green);
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 960px) {
     header{
         padding: 14px;
     }
@@ -148,7 +147,6 @@ header label:hover{
     background-color: var(--primary-black);
     position: relative;
     border: none;
-    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -833,6 +831,10 @@ video{
     border-radius: 0;
     cursor: pointer;
     transition: all 0.3s ease, background-color 0.3s ease;
+}
+
+.eighth-section-button a{
+    color: var(--primary-white);
 }
 
 .eighth-section-button:hover {
