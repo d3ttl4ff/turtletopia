@@ -186,6 +186,7 @@ header label:hover{
     font-size: 20px;
     font-weight: 300;
     text-align: center;
+    align-items: center;
     margin-top: 10%;
 }
 
@@ -821,40 +822,6 @@ video{
 .eighth-section-header li{
     font-weight: 600;
 }
-
-.eighth-section-button {
-    border: none;
-    background-color: var(--primary-black);
-    color: var(--primary-white);
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 0;
-    cursor: pointer;
-    transition: all 0.3s ease, background-color 0.3s ease;
-}
-
-.eighth-section-button a{
-    color: var(--primary-white);
-}
-
-.eighth-section-button:hover {
-    background-color: var(--persian-green);
-    border-radius: 50px;
-}
-
-.eighth-section-button:active {
-    transform: scale(0.95);
-}
-
-.eighth-section-button span {
-    vertical-align: middle;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.eighth-section-button:hover span {
-    animation: vanish 0.5s forwards;
-}
 /****************  eighth section ****************/
 
 /****************  footer ****************/
@@ -906,7 +873,6 @@ footer {
 .footer-list {
     width: 25%;
     padding: 0 30px;
-    /* margin-right: 40px; */
 }
 
 .footer-list h4 {
@@ -986,6 +952,22 @@ footer {
 
     .footer-logo {
         margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 390px){
+    .footer-middle{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-middle ul{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
     }
 }
 /****************  footer ****************/

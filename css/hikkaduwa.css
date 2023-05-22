@@ -1,0 +1,365 @@
+:root {
+    --primary-white: rgb(239, 239, 239);
+    --primary-black: rgb(28, 27, 27);
+    --primary-grey: rgb(106, 106, 106);
+    --persian-green: rgb(62, 140, 143);
+    --mint: rgba(107, 189, 153, 1);
+    --celadon: rgba(174, 207, 164, 1);
+    --tea-green: rgba(196, 232, 194, 1);
+    --letter-space: 5px;
+    --line-height: 28px;
+    --title-margin-bottom: 50px;
+    --title-font-size: 20px;
+
+    --box-shadow-main: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+/**************** hikkaduwa first section ****************/
+.hikkaduwa-first{
+    background-color: var(--primary-white);
+}
+
+.hikkaduwa-first-description-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1120px;
+    margin: auto;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.hikkaduwa-first-description-first-paragraph{
+    margin-top: 20px;
+}
+
+.hikkaduwa-first-image-container{
+    margin: auto;
+    max-width: 1400px;
+    padding: 0 50px 50px 50px;
+    display: grid;
+    grid-template-columns: 21fr 9fr;
+    column-gap: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.hikkaduwa-first-image-container img,
+.hikkaduwa-first-image-container iframe{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hikkaduwa-first-image-container img{
+    aspect-ratio: 21/9;
+}
+
+.hikkaduwa-first-image-container iframe{
+    aspect-ratio: 1/1;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.hikkaduwa-first-button-container{
+    display: flex;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1141px){
+    .hikkaduwa-first-image-container{
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .hikkaduwa-first-image-container iframe{
+        aspect-ratio: 21/9;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.0);
+    }
+}
+
+@media only screen and (max-width: 940px){
+    .hikkaduwa-first-button-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .hikkaduwa-first-image-container img,
+    .hikkaduwa-first-image-container iframe{
+        aspect-ratio: 1/1;
+        max-width: 400px;
+    }
+}
+/**************** hikkaduwa first section ****************/
+
+/**************** hikkaduwa second section ****************/
+.hikkaduwa-second {
+    background-color: var(--primary-white);
+}
+
+.hikkaduwa-second-description-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1120px;
+    margin: auto;
+    padding: 20px 50px 50px 50px;
+    box-sizing: border-box;
+}
+
+.hikkaduwa-second-description-first-paragraph {
+    margin-top: 20px;
+}
+
+.hikkaduwa-second-image-container {
+    margin: auto;
+    max-width: 1400px;
+    padding: 0 50px 50px 50px;
+    display: grid;
+    grid-template-columns: 9fr 21fr;
+    column-gap: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.hikkaduwa-second-image-container-one,
+.hikkaduwa-second-image-container-two {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hikkaduwa-second-image-container-one {
+    aspect-ratio: 1/1;
+}
+
+.hikkaduwa-second-image-container-two {
+    aspect-ratio: 21/9;
+}
+
+@media only screen and (max-width: 1141px) {
+    .hikkaduwa-second-image-container {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .hikkaduwa-second-image-container-one {
+        aspect-ratio: 21/9;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .hikkaduwa-second-image-container img{
+        aspect-ratio: 1/1;
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .hikkaduwa-first-description-container,
+    .hikkaduwa-second-description-container {
+        flex-wrap: nowrap;
+    }
+}
+/**************** hikkaduwa second section ****************/
+
+/**************** hikkaduwa third section ****************/
+.hikkaduwa-third,
+.hikkaduwa-third-wrapper{
+    background-color: var(--primary-white);
+}
+
+.hikkaduwa-third-wrapper{
+    padding: 50px;
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 30px 50px 50px 50px;
+    box-sizing: border-box;
+}
+
+.hikkaduwa-third-first-container,
+.hikkaduwa-third-second-container,
+.hikkaduwa-third-third-container,
+.hikkaduwa-third-fourth-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.hikkaduwa-third-first-container{
+    background-color: var(--persian-green);
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    padding: 50px;
+}
+
+.hikkaduwa-third-first-container-description{
+    max-width: 980px;
+}
+
+.hikkaduwa-third-first-container hr{
+    background-color: var(--primary-black);
+}
+
+.hikkaduwa-third-second-container,
+.hikkaduwa-third-third-container,
+.hikkaduwa-third-fourth-container{
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 50px;
+    max-width: 980px;
+}
+
+.hikkaduwa-third-second-container h3,
+.hikkaduwa-third-third-container h3,
+.hikkaduwa-third-fourth-container h3{
+    font-weight: 400;
+    text-align: left;
+}
+
+.hikkaduwa-third-second-container img,
+.hikkaduwa-third-third-container img,
+.hikkaduwa-third-fourth-container img{
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease-in;
+}
+
+.hikkaduwa-third-second-container img:hover,
+.hikkaduwa-third-third-container img:hover,
+.hikkaduwa-third-fourth-container img:hover{
+    transform: scale(0.98);
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hikkaduwa-third-third-container,
+.hikkaduwa-third-fourth-container{
+    margin-top: 50px;
+}
+
+.hikkaduwa-third-second-container button,
+.hikkaduwa-third-third-container button,
+.hikkaduwa-third-fourth-container button{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 1141px){
+    .hikkaduwa-third-second-container h3,
+    .hikkaduwa-third-third-container h3,
+    .hikkaduwa-third-fourth-container h3 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hikkaduwa-third-second-container,
+    .hikkaduwa-third-fourth-container{
+        flex-direction: column-reverse;
+    }
+
+    .hikkaduwa-third-third-container{
+        flex-direction: column;
+    }
+}
+/**************** hikkaduwa third section ****************/
+
+/**************** hikkaduwa fourth section ****************/
+.hikkaduwa-fourth{
+    background-color: var(--persian-green);
+}
+
+.hikkaduwa-fourth-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+    padding: 50;
+    box-sizing: border-box;
+}
+
+.hikkaduwa-fourth-container h2{
+    color: var(--primary-white);
+}
+
+.hikkaduwa-fourth-container h3{
+    color: var(--primary-white);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+.hikkaduwa-fourth-container h4 {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.hikkaduwa-fourth-container hr{
+    background-color: var(--primary-black);
+}
+
+.hikkaduwa-fourth ul{
+    padding-inline-start: 0;
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    list-style: none;
+}
+
+.hikkaduwa-fourth ul li a{
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: rgb(46, 46, 46);
+
+    transition: all 0.3s ease;
+}
+
+.hikkaduwa-fourth ul li a:hover{
+    color: var(--primary-white);
+}
+
+.threat-outro-list-item,
+.threat-other-list-item {
+    display: flex;
+    flex-direction: column;
+}
+/**************** hikkaduwa fourth section ****************/
+
+
+
+
+
+
+

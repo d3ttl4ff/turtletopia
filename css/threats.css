@@ -15,24 +15,6 @@
 }
 
 /**************** threat-intro ****************/
-.threat-intro{
-    background-color: var(--primary-white);
-}
-
-.threat-intro-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: auto;
-    padding: 50px;
-    width: 100%;
-    max-width: 1260px;
-    box-sizing: border-box;
-}
-
 .threat-intro h2{
     font-size: 20px;
 }
@@ -42,12 +24,16 @@
 }
 /**************** threat-intro ****************/
 
-/**************** threat-outro ****************/
-.threat-outro{
+/**************** threat-outro + common ****************/
+.threat-intro,
+.threat-outro,
+.threat-other{
     background-color: var(--primary-white);
 }
 
-.threat-outro-container{
+.threat-intro-container,
+.threat-outro-container,
+.threat-other-container{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -61,14 +47,16 @@
     box-sizing: border-box;
 }
 
-.threat-outro ul{
+.threat-outro ul,
+.threat-other ul{
     padding-inline-start: 0;
     -webkit-padding-start: 0;
     -moz-padding-start: 0;
     margin-top: 30px;
 }
 
-.threat-outro ul li a {
+.threat-outro ul li a,
+.threat-other ul li a{
     font-size: 16px;
     text-decoration: none;
     display: flex;
@@ -80,11 +68,13 @@
     color: var(--persian-green);
 }
 
-.threat-outro ul li a:hover {
+.threat-outro ul li a:hover,
+.threat-other ul li a:hover{
     color: var(--primary-black);
 }
 
-.threat-outro-list-item {
+.threat-outro-list-item,
+.threat-other-list-item{
     display: flex;
     flex-direction: column;
 }
@@ -94,6 +84,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 50px;
     margin-top: 50px;
+    justify-items: center;
+    align-items: center;
 }
 
 .threat-outro-tiles img{
@@ -127,9 +119,17 @@
         aspect-ratio: 1/1;
         grid-column: initial;
     }
-
 }
-/**************** threat-outro ****************/
+
+@media only screen and (max-width: 375px){
+    .threat-intro-container,
+    .threat-outro-container,
+    .threat-other-container{
+        flex-wrap: nowrap;
+    }
+}
+
+/**************** threat-outro + common ****************/
 
 /**************** common ****************/
 .threat-one-main,
@@ -259,6 +259,7 @@
     .threat-four-container-one,
     .threat-five-container-one{
         flex-direction: column-reverse;
+        padding-bottom: 0;
     }
 
     .threat-one-container-two,
@@ -284,30 +285,6 @@
         text-align: center;
     }
 
-    .threat-one-container-one,
-    .threat-two-container-one,
-    .threat-three-container-one,
-    .threat-four-container-one,
-    .threat-five-container-one{
-        padding-bottom: 0;
-    }
-
-    .threat-one-description-one,
-    .threat-two-description-one,
-    .threat-three-description-one,
-    .threat-four-description-one,
-    .threat-five-description-one{
-        margin-top: 0;
-    }
-
-    .threat-one-description-two,
-    .threat-two-description-two,
-    .threat-three-description-two,
-    .threat-four-description-two,
-    .threat-five-description-two{
-        margin-top: 0;
-    }
-
     .threat-one-description-one,
     .threat-one-description-two,
     .threat-two-description-one,
@@ -320,6 +297,7 @@
     .threat-five-description-two{
         margin-left: 0;
         margin-right: 0;
+        margin-top: 0;
     }
 }
 /**************** common ****************/
