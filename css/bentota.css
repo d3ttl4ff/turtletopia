@@ -14,16 +14,16 @@
     --box-shadow-main: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-.kosgoda-first hr{
+.bentota-first hr {
     margin: 30px 0;
 }
 
-/**************** kosgoda first section ****************/
-.kosgoda-first{
+/**************** bentota first section ****************/
+.bentota-first {
     background-color: var(--primary-white);
 }
 
-.kosgoda-first-text-container{
+.bentota-first-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,7 @@
     box-sizing: border-box;
 }
 
-.kosgoda-first-image-container{
+.bentota-first-image-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
@@ -49,7 +49,7 @@
     margin: auto;
 }
 
-.kosgoda-first-image-container img{
+.bentota-first-image-container img {
     width: 100%;
     max-width: 400px;
     aspect-ratio: 1/1;
@@ -59,44 +59,46 @@
 }
 
 @media only screen and (max-width: 900px) {
-    .kosgoda-first-image-container {
+    .bentota-first-image-container {
         grid-template-columns: 1fr;
     }
 
-    .kosgoda-first-image-container > img:nth-child(2),
-    .kosgoda-first-image-container > img:nth-child(3) {
+    .bentota-first-image-container>img:nth-child(2),
+    .bentota-first-image-container>img:nth-child(3) {
         display: none;
-    }   
+    }
 
-    .kosgoda-first-image-container img{
+    .bentota-first-image-container img {
         aspect-ratio: 21/9;
         max-width: initial;
     }
 }
 
 @media only screen and (max-width: 680px) {
-    .kosgoda-first-image-container>img:nth-child(2),
-    .kosgoda-first-image-container>img:nth-child(3) {
+
+    .bentota-first-image-container>img:nth-child(2),
+    .bentota-first-image-container>img:nth-child(3) {
         display: none;
     }
 
-    .kosgoda-first-image-container img {
+    .bentota-first-image-container img {
         aspect-ratio: 1/1;
         max-width: 400px;
     }
 
-    .kosgoda-first p{
+    .bentota-first p {
         text-align: justify;
     }
 }
-/**************** kosgoda first section ****************/
 
-/**************** kosgoda second section ****************/
-.kosgoda-second {
+/**************** bentota first section ****************/
+
+/**************** bentota second section ****************/
+.bentota-second {
     background-color: var(--primary-white);
 }
 
-.kosgoda-second-text-container {
+.bentota-second-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,9 +112,9 @@
     box-sizing: border-box;
 }
 
-.kosgoda-second-first-image-container,
-.kosgoda-second-second-image-container,
-.kosgoda-second-third-image-container {
+.bentota-second-first-image-container,
+.bentota-second-second-image-container,
+.bentota-second-third-image-container {
     display: grid;
     gap: 50px;
     padding: 0 50px 50px 50px;
@@ -123,86 +125,88 @@
     margin: auto;
 }
 
-.kosgoda-second-first-image-container,
-.kosgoda-second-third-image-container{
+.bentota-second-first-image-container,
+.bentota-second-third-image-container {
     grid-template-columns: 9fr 21fr;
 }
 
-.kosgoda-second-second-image-container{
+.bentota-second-second-image-container {
     grid-template-columns: 21fr 9fr;
 }
 
-.kosgoda-second-first-image-container img,
-.kosgoda-second-second-image-container img,
-.kosgoda-second-third-image-container img {
+.bentota-second-first-image-container img,
+.bentota-second-second-image-container img,
+.bentota-second-third-image-container img {
     width: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
 }
 
-.kosgoda-second-first-image-container-one,
-.kosgoda-second-second-image-container-two,
-.kosgoda-second-third-image-container-one{
+.bentota-second-first-image-container-one,
+.bentota-second-second-image-container-two,
+.bentota-second-third-image-container-one {
     aspect-ratio: 1/1;
 }
 
-.kosgoda-second-first-image-container-two,
-.kosgoda-second-second-image-container-one,
-.kosgoda-second-third-image-container-two{
+.bentota-second-first-image-container-two,
+.bentota-second-second-image-container-one,
+.bentota-second-third-image-container-two {
     aspect-ratio: 21/9;
 }
 
 @media only screen and (max-width: 900px) {
-    .kosgoda-second-first-image-container,
-    .kosgoda-second-second-image-container{
+
+    .bentota-second-first-image-container,
+    .bentota-second-second-image-container {
         grid-template-columns: 1fr 1fr;
     }
 
-    .kosgoda-second-first-image-container-two,
-    .kosgoda-second-second-image-container-one{
+    .bentota-second-first-image-container-two,
+    .bentota-second-second-image-container-one {
         aspect-ratio: 1/1;
     }
 
-    .kosgoda-second>div:nth-child(4){
+    .bentota-second>div:nth-child(4) {
         display: none;
     }
 }
 
 @media only screen and (max-width: 680px) {
 
-    .kosgoda-second-first-image-container,
-    .kosgoda-second-second-image-container {
+    .bentota-second-first-image-container,
+    .bentota-second-second-image-container {
         grid-template-columns: 1fr;
     }
 
-    .kosgoda-second-first-image-container-two,
-    .kosgoda-second-second-image-container-one {
+    .bentota-second-first-image-container-two,
+    .bentota-second-second-image-container-one {
         aspect-ratio: 1/1;
     }
 
-    .kosgoda-second-first-image-container img{
+    .bentota-second-first-image-container img {
         max-width: 400px;
     }
 
-    .kosgoda-second>div:nth-child(3),
-    .kosgoda-second-first-image-container>img:nth-child(2){
+    .bentota-second>div:nth-child(3),
+    .bentota-second-first-image-container>img:nth-child(2) {
         display: none;
     }
 
-    .kosgoda-second p{
+    .bentota-second p {
         text-align: justify;
     }
 }
-/**************** kosgoda second section ****************/
 
-/**************** kosgoda third section ****************/
-.kosgoda-third {
+/**************** bentota second section ****************/
+
+/**************** bentota third section ****************/
+.bentota-third {
     background-color: var(--persian-green);
 }
 
-.kosgoda-third-container,
-.kosgoda-third-text-container{
+.bentota-third-container,
+.bentota-third-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -215,19 +219,19 @@
     box-sizing: border-box;
 }
 
-.kosgoda-third-container{
+.bentota-third-container {
     padding: 50px;
 }
 
-.kosgoda-third hr{
+.bentota-third hr {
     background-color: var(--primary-black);
     margin: 30px 0 0 0;
 }
 
-.kosgoda-third-first-item-container,
-.kosgoda-third-second-item-container,
-.kosgoda-third-third-item-container,
-.kosgoda-third-fourth-item-container{
+.bentota-third-first-item-container,
+.bentota-third-second-item-container,
+.bentota-third-third-item-container,
+.bentota-third-fourth-item-container {
     display: grid;
     gap: 80px;
     padding: 50px;
@@ -235,31 +239,31 @@
 }
 
 
-.kosgoda-third-first-item-container,
-.kosgoda-third-third-item-container{
+.bentota-third-first-item-container,
+.bentota-third-third-item-container {
     grid-template-columns: 1fr 1fr;
 }
 
-.kosgoda-third-second-item-container,
-.kosgoda-third-fourth-item-container{
+.bentota-third-second-item-container,
+.bentota-third-fourth-item-container {
     grid-template-columns: 1fr 1fr;
 }
 
-.kosgoda-third-item-one,
-.kosgoda-third-item-two,
-.kosgoda-third-item-three,
-.kosgoda-third-item-four{
+.bentota-third-item-one,
+.bentota-third-item-two,
+.bentota-third-item-three,
+.bentota-third-item-four {
     text-align: justify;
 }
 
-.kosgoda-third-item-one h4,
-.kosgoda-third-item-two h4,
-.kosgoda-third-item-three h4,
-.kosgoda-third-item-four h4{
+.bentota-third-item-one h4,
+.bentota-third-item-two h4,
+.bentota-third-item-three h4,
+.bentota-third-item-four h4 {
     color: var(--primary-white);
 }
 
-.kosgoda-third-container img {
+.bentota-third-container img {
     width: 100%;
     max-width: 400px;
     aspect-ratio: 1/1;
@@ -268,69 +272,71 @@
     display: block;
 }
 
-.kosgoda-third button{
+.bentota-third button {
     margin-top: 30px;
 }
 
-.kosgoda-third button:hover {
+.bentota-third button:hover {
     background-color: var(--primary-black);
 }
 
 @media only screen and (max-width: 900px) {
-    .kosgoda-third-first-item-container,
-    .kosgoda-third-third-item-container,
-    .kosgoda-third-second-item-container,
-    .kosgoda-third-fourth-item-container{
+
+    .bentota-third-first-item-container,
+    .bentota-third-third-item-container,
+    .bentota-third-second-item-container,
+    .bentota-third-fourth-item-container {
         display: flex;
         padding: 50px 0;
         justify-items: center;
         gap: 50px;
     }
 
-    .kosgoda-third-first-item-container,
-    .kosgoda-third-third-item-container {
+    .bentota-third-first-item-container,
+    .bentota-third-third-item-container {
         flex-direction: column;
     }
-        
-    .kosgoda-third-second-item-container,
-    .kosgoda-third-fourth-item-container{
+
+    .bentota-third-second-item-container,
+    .bentota-third-fourth-item-container {
         flex-direction: column-reverse;
     }
 
-    .kosgoda-third-item-one,
-    .kosgoda-third-item-two,
-    .kosgoda-third-item-three,
-    .kosgoda-third-item-four{
+    .bentota-third-item-one,
+    .bentota-third-item-two,
+    .bentota-third-item-three,
+    .bentota-third-item-four {
         text-align: center;
     }
 
-    .kosgoda-third-item-one p,
-    .kosgoda-third-item-two p,
-    .kosgoda-third-item-three p,
-    .kosgoda-third-item-four p{
+    .bentota-third-item-one p,
+    .bentota-third-item-two p,
+    .bentota-third-item-three p,
+    .bentota-third-item-four p {
         text-align: justify;
     }
 
-    .kosgoda-third-container img{
+    .bentota-third-container img {
         aspect-ratio: 21/9;
         max-width: initial;
     }
 }
 
-@media only screen and (max-width: 680px){
-    .kosgoda-third-container img{
+@media only screen and (max-width: 680px) {
+    .bentota-third-container img {
         aspect-ratio: 1/1;
         max-width: 400px;
     }
 }
-/**************** kosgoda third section ****************/
 
-/**************** kosgoda fourth section ****************/
-.kosgoda-fourth {
+/**************** bentota third section ****************/
+
+/**************** bentota fourth section ****************/
+.bentota-fourth {
     background-color: var(--primary-white);
 }
 
-.kosgoda-fourth-container {
+.bentota-fourth-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -345,32 +351,32 @@
     box-sizing: border-box;
 }
 
-.kosgoda-fourth-container h2 {
+.bentota-fourth-container h2 {
     color: var(--primary-black);
 }
 
-.kosgoda-fourth-container h3 {
+.bentota-fourth-container h3 {
     color: var(--primary-black);
     margin-bottom: 10px;
 }
 
-.kosgoda-fourth-container h4 {
+.bentota-fourth-container h4 {
     margin-bottom: 10px;
     font-weight: 400;
 }
 
-.kosgoda-fourth-container hr {
+.bentota-fourth-container hr {
     background-color: var(--primary-black);
 }
 
-.kosgoda-fourth ul {
+.bentota-fourth ul {
     padding-inline-start: 0;
     -webkit-padding-start: 0;
     -moz-padding-start: 0;
     list-style: none;
 }
 
-.kosgoda-fourth ul li a {
+.bentota-fourth ul li a {
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -383,7 +389,7 @@
     transition: all 0.3s ease;
 }
 
-.kosgoda-fourth ul li a:hover {
+.bentota-fourth ul li a:hover {
     color: var(--persian-green);
 }
 
@@ -392,4 +398,5 @@
     display: flex;
     flex-direction: column;
 }
-/**************** kosgoda fourth section ****************/
+
+/**************** bentota fourth section ****************/
