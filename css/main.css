@@ -89,7 +89,7 @@ header label:hover{
     color: var(--persian-green);
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 970px) {
     header{
         padding: 14px;
     }

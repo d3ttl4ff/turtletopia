@@ -386,10 +386,4 @@
 .kosgoda-fourth ul li a:hover {
     color: var(--persian-green);
 }
-
-.threat-outro-list-item,
-.threat-other-list-item {
-    display: flex;
-    flex-direction: column;
-}
 /**************** kosgoda fourth section ****************/
