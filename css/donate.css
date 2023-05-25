@@ -1,0 +1,43 @@
+:root {
+    --primary-white: rgb(239, 239, 239);
+    --primary-black: rgb(28, 27, 27);
+    --primary-grey: rgb(106, 106, 106);
+    --persian-green: rgb(62, 140, 143);
+    --mint: rgba(107, 189, 153, 1);
+    --celadon: rgba(174, 207, 164, 1);
+    --tea-green: rgba(196, 232, 194, 1);
+    --letter-space: 5px;
+    --line-height: 28px;
+    --title-margin-bottom: 50px;
+    --title-font-size: 20px;
+
+    --box-shadow-main: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+/**************** donate first section ****************/
+.donate-first{
+    background-color: var(--primary-white);
+}
+
+.donate-first-container{
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.donate-first-container-one img,
+.donate-first-container-two img{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+/**************** donate first section ****************/
