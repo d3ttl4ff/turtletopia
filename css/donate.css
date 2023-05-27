@@ -14,30 +14,223 @@
     --box-shadow-main: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
+*{
+    box-sizing: border-box;
+}
 /**************** donate first section ****************/
 .donate-first{
-    background-color: var(--primary-white);
+    background-color: white;
 }
 
 .donate-first-container{
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; */
-
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 50px;
+    gap: 50px;
+    justify-items: center;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.donate-first-container-one img,
+.donate-first-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
 .donate-first-container-two img{
     width: 100%;
+    max-width: 600px;
     aspect-ratio: 1/1;
 }
+
+.donate-first-container-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.donate-first-container-two button{
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    padding: 10px 50px;
+}
+
+.donate-first-container-two h4{
+    font-weight: 400;
+}
+
+.donate-first-container-two h5{
+    color: rgb(255, 94, 0);
+}
+
+.donate-first-container-two h4,
+.donate-first-container-two h5{
+    margin: 10px 0;
+}
+
+h4 a{
+    color: var(--primary-black);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+h4 a:hover{
+    color: var(--persian-green);
+}
+
+@media only screen and (max-width: 1260px) {
+    .donate-first-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .donate-first-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .donate-first-container {
+        grid-template-columns: 1fr;
+    }
+}
 /**************** donate first section ****************/
+
+/**************** donate second section ****************/
+.donate-second{
+    background-color: var(--persian-green);
+}
+
+.donate-second-container{
+    padding: 50px;
+}
+
+.form-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    box-sizing: border-box;
+}
+
+.donate-second-inputbox{
+    position: relative;
+    width: 250px;
+}
+
+.main-user-info,
+.address-info,
+.payment-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.donate-second-inputbox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-white);
+    background: var(--persian-green);
+    border-radius: 3px;
+    outline: none;
+    color: var(--primary-black);
+    font-size: 1em;
+    transition: 0.3s ease-out;
+}
+
+.donate-second-inputbox span{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: var(--primary-white);
+    text-transform: uppercase;
+    transition: 0.3s ease-out;
+}
+
+.donate-second-inputbox input:valid ~ span,
+.donate-second-inputbox input:focus ~ span{
+    transform: translateX(10px) translateY(-38px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: var(--persian-green);
+    border-left: 1px solid var(--primary-white);
+    letter-spacing: 0.2em;
+}
+
+.donate-second-inputbox input:valid~span,
+.donate-second-inputbox input:focus~span {
+    background: var(--primary-white);
+    color: var(--primary-black);
+    border-radius: 2px;
+}
+
+.donate-second-inputbox input:valid,
+.donate-second-inputbox input:focus{
+    border: 1px solid var(--primary-white);
+}
+
+.my-input::placeholder{
+    color: transparent;
+}
+
+.my-input:focus::placeholder {
+    color: rgb(85, 85, 85);
+}
+
+.gender-details-info{
+    margin: 0;
+}
+
+.gender-details-info span{
+    color: var(--primary-white);
+}
+
+.gender-category{
+    border: 1px solid var(--primary-white);
+    border-radius: 3px;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0;
+    color: var(--primary-white);
+}
+
+.button-for-all-2 {
+    border: none;
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease, background-color 0.3s ease;
+}
+
+.button-for-all-2:hover {
+    background-color: var(--primary-black);
+    border-radius: 50px;
+}
+
+.button-for-all-2:active {
+    transform: scale(0.95);
+}
+
+/* @media only screen and(max-width:800px){
+    .form-container {
+        flex-wrap: wrap;
+    }
+} */
+/**************** donate second section ****************/

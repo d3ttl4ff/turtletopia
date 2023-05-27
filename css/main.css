@@ -156,7 +156,7 @@ header label:hover{
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 75VH;
     margin-top: auto;
 }
 
@@ -827,16 +827,19 @@ video{
 /****************  footer ****************/
 footer {
     background-color: rgb(255, 255, 255);
-    padding: 50px;
+}
+
+.footer-main{
     font-size: 0.9rem;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .footer-container {
-    /* max-width: 1000px; */
+    padding: 50px;
     margin: 0;
     display: flex;
     text-align: center;
@@ -935,6 +938,17 @@ footer {
 
 .footer-social-container a:active img {
     transform: scale(0.5);
+}
+
+.footer-base{
+    background-color: rgb(255, 255, 255);
+    color: var(--primary-grey);
+    padding: 0.714rem 0;
+    border-top: 1px solid var(--primary-grey);
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
 }
 
 @media screen and (max-width: 890px) {
