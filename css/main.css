@@ -32,6 +32,9 @@ header{
 header .nav-bar ul{
     list-style: none;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header .nav-bar ul li {
@@ -89,7 +92,7 @@ header label:hover{
     color: var(--persian-green);
 }
 
-@media only screen and (max-width: 970px) {
+@media only screen and (max-width: 700px) {
     header{
         padding: 14px;
     }
@@ -177,6 +180,11 @@ header label:hover{
     width: 100vw;
     height: 100vh;
     display: block;
+}
+
+.main-viewport-image-container{
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .main-viewport-header {
@@ -300,20 +308,20 @@ header label:hover{
 }
 
 .introduction-main-header h1 {
-    font-size: 22px;
+    font-size: 18px;
     letter-spacing: var(--letter-space);
     text-transform: uppercase;
 }
 
 .introduction-main-header h2{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: var(--letter-space);
 }
 
 .introduction-main-header p{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -398,6 +406,7 @@ header label:hover{
 .second-section h2 {
     font-size: var(--title-font-size);
     font-weight: 600;
+    font-size: 18px;
     text-align: center;
     letter-spacing: var(--letter-space);
     text-transform: uppercase;
@@ -412,6 +421,15 @@ header label:hover{
 
 .second-section li {
     margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.second-section span{
+    font-size: 15px;
+}
+
+.second-section{
+    font-size: 15px;
 }
 
 .second-section-list-item{
@@ -450,6 +468,7 @@ header label:hover{
 .third-section h2 {
     font-size: var(--title-font-size);
     font-weight: 600;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: var(--letter-space);
@@ -656,8 +675,8 @@ video{
 }
 
 .fifth-section h2 {
-    font-size: var(--title-font-size);
     font-weight: 600;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: var(--letter-space);
@@ -665,6 +684,7 @@ video{
 
 .fifth-section p{
     line-height: var(--line-height);
+    font-size: 15px;
 }
 /**************** fifth section ****************/
 
@@ -709,9 +729,14 @@ video{
 .seventh-section h2{
     font-size: var(--title-font-size);
     font-weight: 600;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: var(--letter-space);
+}
+
+.seventh-section p{
+    font-size: 15px;
 }
 
 .seventh-section-header-title {
@@ -795,9 +820,14 @@ video{
 .eighth-section h2 {
     font-size: var(--title-font-size);
     font-weight: 600;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: var(--letter-space);
+}
+
+.eighth-section p{
+    font-size: 15px;
 }
 
 .eighth-section-header-title {
@@ -821,6 +851,7 @@ video{
 
 .eighth-section-header li{
     font-weight: 600;
+    font-size: 15px;
 }
 /****************  eighth section ****************/
 
@@ -874,7 +905,7 @@ footer {
 }
 
 .footer-list {
-    width: 25%;
+    /* width: 25%; */
     padding: 0 30px;
 }
 

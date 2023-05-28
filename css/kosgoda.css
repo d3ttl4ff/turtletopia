@@ -18,6 +18,25 @@
     margin: 30px 0;
 }
 
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 800px) {
+    p {
+        font-size: 14px;
+    }
+}
+
 /**************** kosgoda first section ****************/
 .kosgoda-first{
     background-color: var(--primary-white);
@@ -123,8 +142,7 @@
     margin: auto;
 }
 
-.kosgoda-second-first-image-container,
-.kosgoda-second-third-image-container{
+.kosgoda-second-first-image-container{
     grid-template-columns: 9fr 21fr;
 }
 
@@ -134,22 +152,25 @@
 
 .kosgoda-second-first-image-container img,
 .kosgoda-second-second-image-container img,
-.kosgoda-second-third-image-container img {
+.kosgoda-second-first-image-container iframe {
     width: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
 }
 
+.kosgoda-second-first-image-container iframe{
+    border: 0;
+    aspect-ratio: 21/9;
+}
+
 .kosgoda-second-first-image-container-one,
-.kosgoda-second-second-image-container-two,
-.kosgoda-second-third-image-container-one{
+.kosgoda-second-second-image-container-two{
     aspect-ratio: 1/1;
 }
 
 .kosgoda-second-first-image-container-two,
-.kosgoda-second-second-image-container-one,
-.kosgoda-second-third-image-container-two{
+.kosgoda-second-second-image-container-one{
     aspect-ratio: 21/9;
 }
 
@@ -166,6 +187,11 @@
 
     .kosgoda-second>div:nth-child(4){
         display: none;
+    }
+
+    .kosgoda-second-first-image-container iframe{
+        aspect-ratio: 1/1;
+        max-width: 400px;
     }
 }
 

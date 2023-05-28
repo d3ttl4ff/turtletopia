@@ -204,6 +204,10 @@
     transition: transform 0.2s ease-out, box-shadow 0.3s ease-in;
 }
 
+.threat-outro-tiles img{
+    object-position: top;
+}
+
 .threat-one-container-one img:hover,
 .threat-one-container-two img:hover,
 .threat-two-container-one img:hover,

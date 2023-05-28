@@ -28,6 +28,8 @@
 
 .categories-first-section-2{
     padding-top: 0;
+    display: flex;
+    gap: 50px;
 }
 
 .categories-first-section-item{
@@ -36,18 +38,7 @@
     justify-content: center;
 }
 
-.categories-first-section-item img,
-.categories-first-section-item iframe {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    box-shadow: var(--box-shadow-main);
-}
-
-.categories-first-section-item iframe {
+.categories-first-section-2 iframe {
     border: 0;
 }
 
@@ -57,20 +48,14 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    width: 400px;
+    max-width: 400px;
 }
 
 .categories-first-section-item h2, 
 .categories-first-section-item h3{
     text-align: center;
     color: var(--primary-black);
-}
-
-.categories-first-section-item h2{
-    font-size: 18px;
-}
-
-.categories-first-section-item h3{
-    font-size: 16px;
 }
 
 .categories-first-section-description{
@@ -107,18 +92,7 @@
     justify-content: center;
 }
 
-.categories-second-section-item img,
-.categories-second-section-item iframe {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    box-shadow: var(--box-shadow-main);
-}
-
-.categories-second-section-item iframe {
+.categories-second-section-2 iframe {
     border: 0;
 }
 
@@ -128,20 +102,14 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    width: 400px;
+    max-width: 400px;
 }
 
 .categories-second-section-item h2,
 .categories-second-section-item h3 {
     text-align: center;
     color: var(--primary-black);
-}
-
-.categories-second-section-item h2 {
-    font-size: 18px;
-}
-
-.categories-second-section-item h3 {
-    font-size: 16px;
 }
 
 .categories-second-section-2 hr{
@@ -181,18 +149,7 @@
     justify-content: center;
 }
 
-.categories-third-section-item img,
-.categories-third-section-item iframe{
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    box-shadow: var(--box-shadow-main);
-}
-
-.categories-third-section-item iframe {
+.categories-third-section-2 iframe {
     border: 0;
 }
 
@@ -210,14 +167,6 @@
 .categories-third-section-item h3 {
     text-align: center;
     color: var(--primary-black);
-}
-
-.categories-third-section-item h2 {
-    font-size: 18px;
-}
-
-.categories-third-section-item h3 {
-    font-size: 16px;
 }
 
 .categories-third-section-description {
@@ -254,18 +203,7 @@
     justify-content: center;
 }
 
-.categories-fourth-section-item img,
-.categories-fourth-section-item iframe {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    box-shadow: var(--box-shadow-main);
-}
-
-.categories-fourth-section-item iframe {
+.categories-fourth-section-2 iframe {
     border: 0;
 }
 
@@ -275,20 +213,14 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    max-width: 400px;
+    width: 400px;
 }
 
 .categories-fourth-section-item h2,
 .categories-fourth-section-item h3 {
     text-align: center;
     color: var(--primary-black);
-}
-
-.categories-fourth-section-item h2 {
-    font-size: 18px;
-}
-
-.categories-fourth-section-item h3 {
-    font-size: 16px;
 }
 
 .categories-fourth-section-2 hr {
@@ -328,18 +260,7 @@
     justify-content: center;
 }
 
-.categories-fifth-section-item img,
-.categories-fifth-section-item iframe {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    box-shadow: var(--box-shadow-main);
-}
-
-.categories-fifth-section-item iframe {
+.categories-fifth-section-2 iframe {
     border: 0;
 }
 
@@ -359,14 +280,6 @@
     color: var(--primary-black);
 }
 
-.categories-fifth-section-item h2 {
-    font-size: 18px;
-}
-
-.categories-fifth-section-item h3 {
-    font-size: 16px;
-}
-
 .categories-fifth-section-description {
     display: flex;
     justify-content: center;
@@ -380,7 +293,61 @@
 /**************** categories fifth section ****************/
 
 /**************** common ****************/
-@media only screen and (max-width: 1141px) {
+.main-section-1 p,
+.main-section-2 p,
+.main-section-3 p,
+.main-section-4 p,
+.main-section-5 p {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.main-section-1 h2,
+.main-section-2 h2,
+.main-section-3 h2,
+.main-section-4 h2,
+.main-section-5 h2 {
+    font-size: 17px;
+}
+
+.main-section-1 h3,
+.main-section-2 h3,
+.main-section-3 h3,
+.main-section-4 h3,
+.main-section-5 h3 {
+    font-size: 15px;
+}
+
+.categories-first-section-2,
+.categories-second-section-2,
+.categories-third-section-2,
+.categories-fourth-section-2,
+.categories-fifth-section-2 {
+    padding-top: 0;
+    display: flex;
+    gap: 50px;
+}
+
+.categories-first-section-item img,
+.categories-first-section-2 iframe,
+.categories-second-section-item img,
+.categories-second-section-2 iframe,
+.categories-third-section-item img,
+.categories-third-section-2 iframe,
+.categories-fourth-section-item img,
+.categories-fourth-section-2 iframe,
+.categories-fifth-section-item img,
+.categories-fifth-section-2 iframe {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    box-shadow: var(--box-shadow-main);
+}
+
+@media only screen and (max-width: 900px) {
     .categories-first-section-container,
     .categories-second-section-container,
     .categories-third-section-container,
@@ -408,7 +375,24 @@
     .categories-fourth-section-item-description,
     .categories-fifth-section-item-description {
         max-width: 100%;
-        width: 100%;
+        /* width: 100%; */
+    }
+
+    .categories-first-section-2,
+    .categories-second-section-2,
+    .categories-third-section-2,
+    .categories-fourth-section-2,
+    .categories-fifth-section-2{
+        flex-direction: column;
+    }
+
+    .categories-first-section-item img,
+    .categories-second-section-item img,
+    .categories-third-section-item img,
+    .categories-fourth-section-item img,
+    .categories-fifth-section-item img{
+        aspect-ratio: 1/1;
+            max-width: 400px;
     }
 }
 /**************** common ****************/

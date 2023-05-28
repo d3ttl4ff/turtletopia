@@ -29,7 +29,7 @@
                 <li><a href="#">Gallery</a></li>
                 <li><a href="hikkaduwa.html">Hikkaduwa</a></li>
                 <li>
-                    <a href="#">Other</a>
+                    <a href="#">Other Hatcheries</a>
                     <ul class="nav-bar-items-2">
                         <li><a href="kosgoda.html">Kosgoda</a></li>
                         <li><a href="bentota.html">Bentota</a></li>
@@ -42,7 +42,7 @@
     
     <div class="main-viewport">
         <div class="main-viewport-images">
-            <div>
+            <div class="main-viewport-image-container">
                 <img class="main-viewport-image" src="images/ali-kazal-DxkIQA8cdt4-unsplash.jpg" alt="">
             </div>
         </div>
@@ -50,13 +50,13 @@
             <div class="main-viewport-header-text">
                 <h2>Donate and Merch</h2>
             </div>
-            <button class="scroll-btn" onclick="location.href='#main-section-id'">
+            <button class="scroll-btn" onclick="location.href='#donate-first-id'">
                 <img src="icons/angle-down_teel.svg" alt="">
             </button>
         </div>
     </div>
 
-    <section class="donate-first">
+    <section id="donate-first-id" class="donate-first">
         <div class="donate-first-title">
             <h2>Turtle Merch</h2>
             <hr>
@@ -163,7 +163,11 @@
 
     <section class="donate-second">
         <div class="donate-second-container">
-            <form action="#">
+            <div>
+                <h3>Make a Donation</h3>   
+                <hr> 
+            </div>
+            <form action="https://www.rainforesttrust.org/saving-endangered-species/sea-turtles/" method="GET">
                 <div class="form-container">
                     <div class="main-user-info">
                         <div class="donate-second-inputbox">
@@ -224,13 +228,18 @@
                             <span>Exp year</span>
                         </div>
                         <div class="donate-second-inputbox">
-                            <input type="text" class="my-input" placeholder="xxx" maxlength="3" required="required">
+                            <input type="text" class="my-input" placeholder="123" maxlength="3" required="required">
                             <span>CVV</span>
                         </div>
                     </div>
                 </div>
-                <div class="form-submit-button">
-                    <input type="submit" class="button-for-all-2" value="Donate">
+                <div class="form-buttons">
+                    <div class="form-submit-button">
+                        <input type="submit" class="button-for-all-2" value="Donate">
+                    </div>
+                    <div class="form-reset-button">
+                        <input type="reset" class="button-for-all-2" value="Reset">
+                    </div>
                 </div>
             </form>
         </div>

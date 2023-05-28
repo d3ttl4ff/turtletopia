@@ -18,6 +18,25 @@
     margin: 30px 0;
 }
 
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 800px) {
+    p {
+        font-size: 14px;
+    }
+}
+
 /**************** bentota first section ****************/
 .bentota-first {
     background-color: var(--primary-white);
@@ -294,6 +313,15 @@
         aspect-ratio: 1/1;
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .bentota-third-first-item-container,
+    .bentota-third-second-item-container,
+    .bentota-third-third-item-container{
+        padding: 0;
+        border: 0;
+    }
+}
 /**************** bentota third section ****************/
 
 /**************** bentota image section ****************/
@@ -464,6 +492,19 @@
 
     .bentota-fourth-sub-container h4{
         text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .bentota-fourth-sub-item-one,
+    .bentota-fourth-sub-item-two,
+    .bentota-fourth-sub-item-three{
+        padding: 0;
+        border: 0;
+    }
+
+    .bentota-fourth-sub-container{
+        padding: 0;
     }
 }
 /**************** bentota fourth section ****************/

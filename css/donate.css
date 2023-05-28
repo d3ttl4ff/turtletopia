@@ -109,18 +109,26 @@ h4 a:hover{
 
 .donate-second-container{
     padding: 50px;
+    text-align: center;
+}
+
+.donate-second hr{
+    background-color: var(--primary-black);
 }
 
 .form-container{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
-    box-sizing: border-box;
+    margin: 50px 0;
+    width: 100%;
 }
 
 .donate-second-inputbox{
     position: relative;
-    width: 250px;
+    min-width: 250px;
+    width: 100%;
 }
 
 .main-user-info,
@@ -128,11 +136,9 @@ h4 a:hover{
 .payment-info{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    gap: 30px;
 }
 
 .donate-second-inputbox input{
@@ -191,6 +197,7 @@ h4 a:hover{
 
 .gender-details-info{
     margin: 0;
+    width: 100%;
 }
 
 .gender-details-info span{
@@ -200,12 +207,16 @@ h4 a:hover{
 .gender-category{
     border: 1px solid var(--primary-white);
     border-radius: 3px;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
     padding: 10px;
-    margin: 10px;
-    margin-left: 0;
     color: var(--primary-white);
+}
+
+.form-buttons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .button-for-all-2 {
@@ -228,9 +239,17 @@ h4 a:hover{
     transform: scale(0.95);
 }
 
-/* @media only screen and(max-width:800px){
-    .form-container {
-        flex-wrap: wrap;
+@media only screen and (max-width:948px) {
+    .payment-info {
+        width: 100%;
     }
-} */
+}
+
+@media only screen and (max-width:648px){
+    .main-user-info,
+    .address-info,
+    .payment-info{
+        width: 100%;
+    }
+}
 /**************** donate second section ****************/
