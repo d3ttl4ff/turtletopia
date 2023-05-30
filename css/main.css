@@ -42,7 +42,7 @@ header .nav-bar ul li {
     float: left;
 }
 
- header .nav-bar ul li a {
+header .nav-bar ul li a {
     display: block;
     text-decoration: none;
     font-size: 0.96em;
@@ -195,7 +195,7 @@ header label:hover{
     font-weight: 300;
     text-align: center;
     align-items: center;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 .main-viewport-header-text span{
