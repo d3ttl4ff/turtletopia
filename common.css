@@ -19,6 +19,22 @@ body{
     scroll-padding-top: 51px;
 }
 
+html::-webkit-scrollbar{
+    top: 20px;
+    width: 11px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #2e3131;
+    border-radius: 20px;
+    border: 3px solid #fff;
+    background-clip: content-box;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
 body{
     background-image: url('images/qwert.jpg');
     background-size:cover;

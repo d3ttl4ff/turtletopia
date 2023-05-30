@@ -440,6 +440,12 @@ header label:hover{
 .second-section-list-item-title{
     font-weight: 700;
 }
+
+@media only screen and (max-width:900px) {
+    .second-section {
+        padding: 50px;
+    }
+}
 /**************** second section ****************/
 
 /**************** third section ****************/
