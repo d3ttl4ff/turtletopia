@@ -299,7 +299,7 @@ header label:hover{
     background-color: var(--primary-white);
     display: block;
     margin: 0;
-    padding: 60px 25px 80px 25px;
+    padding: 60px 30px 80px 30px;
     margin-bottom: 80px;
 }
 
@@ -382,6 +382,23 @@ header label:hover{
         transform: translateY(0);
     }
 }
+
+@media only screen and (max-width:640px) {
+    .introduction h2,
+    .introduction h1 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .introduction p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .introduction hr {
+        margin: 20px 0;
+    }
+}
 /**************** about - button ****************/
 /**************** introduction ****************/
 
@@ -444,6 +461,26 @@ header label:hover{
 @media only screen and (max-width:900px) {
     .second-section {
         padding: 50px;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .second-section-container h2 {
+            font-size: 16px;
+            text-align: left;
+        }
+    
+    .second-section-container p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .second-section hr {
+        margin: 20px 0;
+    }
+
+    .second-section ul li{
+        text-align: left;
     }
 }
 /**************** second section ****************/
@@ -670,7 +707,7 @@ video{
 }
 
 .fifth-section-container{
-    padding: 50px 25px;
+    padding: 50px 30px;
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
@@ -696,11 +733,16 @@ video{
 @media screen and (max-width: 640px) {
     .fifth-section-container h2{
         font-size: 16px;
+        text-align: left;
     }
 
     .fifth-section-container p{
         font-size: 14px;
         text-align: left;
+    }
+
+    .fifth-section hr{
+        margin: 20px 0;
     }
 }
 /**************** fifth section ****************/
@@ -761,7 +803,7 @@ video{
 }
 
 .seventh-section-header{
-    padding: 50px 25px;
+    padding: 50px 30px;
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
@@ -833,6 +875,10 @@ video{
         font-size: 14px;
         text-align: left;
     }
+
+    .seventh-section hr{
+        margin: 20px 0;
+    }
 }
 /**************** seventh section ****************/
 
@@ -864,7 +910,7 @@ video{
 }
 
 .eighth-section-header {
-    padding: 50px 25px;
+    padding: 50px 30px;
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
@@ -881,6 +927,33 @@ video{
 .eighth-section-header li{
     font-weight: 600;
     font-size: 15px;
+}
+
+@media screen and (max-width: 640px) {
+    .eighth-section h2 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .eighth-section p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .eighth-section ol,
+    .eighth-section ul{
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .eighth-section ol li,
+    .eighth-section ul li{
+        font-size: 14px;
+    }
+
+    .eighth-section hr{
+        margin: 20px 0;
+    }
 }
 /****************  eighth section ****************/
 
