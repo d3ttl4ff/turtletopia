@@ -670,7 +670,7 @@ video{
 }
 
 .fifth-section-container{
-    padding: 80px 25px;
+    padding: 50px 25px;
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
@@ -691,6 +691,17 @@ video{
 .fifth-section p{
     line-height: var(--line-height);
     font-size: 15px;
+}
+
+@media screen and (max-width: 640px) {
+    .fifth-section-container h2{
+        font-size: 16px;
+    }
+
+    .fifth-section-container p{
+        font-size: 14px;
+        text-align: left;
+    }
 }
 /**************** fifth section ****************/
 
@@ -810,6 +821,18 @@ video{
 
 .seventh-section-slider-nav a:hover{
     background-color: rgba(70, 160, 148, 10.7);
+}
+
+@media screen and (max-width: 640px) {
+    .seventh-section h2 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .seventh-section p {
+        font-size: 14px;
+        text-align: left;
+    }
 }
 /**************** seventh section ****************/
 
