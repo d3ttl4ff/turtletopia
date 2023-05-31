@@ -270,7 +270,6 @@ header label:hover{
         transform: translateY(0);
     }
 }
-
 @media screen and (max-width: 1140px) {
     .main-viewport-header {
         margin-top: 25%;
