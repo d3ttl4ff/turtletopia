@@ -1,0 +1,479 @@
+:root {
+    --primary-white: rgb(239, 239, 239);
+    --primary-black: rgb(28, 27, 27);
+    --primary-grey: rgb(106, 106, 106);
+    --persian-green: rgb(62, 140, 143);
+    --mint: rgba(107, 189, 153, 1);
+    --celadon: rgba(174, 207, 164, 1);
+    --tea-green: rgba(196, 232, 194, 1);
+    --letter-space: 5px;
+    --line-height: 28px;
+    --title-margin-bottom: 50px;
+    --title-font-size: 20px;
+
+    --box-shadow-main: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/**************** main viewport ****************/
+.ticket-main-viewport {
+    background-color: var(--primary-black);
+    position: relative;
+    border: none;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 20Vh;
+    margin-top: auto;
+}
+
+.ticket-main-viewport::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.ticket-main-viewport-image {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+.ticket-main-viewport-image-container{
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.ticket-main-viewport-header {
+    position: absolute;
+    color: var(--primary-white);
+    z-index: 1;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    align-items: center;
+    /* margin-top: 10%; */
+}
+
+.ticket-main-viewport-header-text span{
+    text-transform: capitalize;
+}
+
+.ticket-main-viewport-header h2 {
+    letter-spacing: 10px;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-top: 0;
+    transition: 0.7s ease-in-out;
+    transition: letter-spacing 0.3s ease-in-out;
+}
+
+.ticket-main-viewport-header ol {
+    color: #ffffff;
+    z-index: 1;
+    position: absolute;
+    bottom: 28px;
+    display: block;
+}
+
+.scroll-btn {
+    border: none;
+    bottom: 300px;
+    padding: 10px 50px;
+    margin-top: 10px;
+    background-color: rgba(239, 239, 239, 0.9);
+    color: rgba(239, 239, 239, 0.9);
+    font-size: 16px;
+    text-align: center;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 0px;
+
+    background-clip: padding-box;
+
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+    border-radius: 50px;
+}
+
+.scroll-btn img {
+    width: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover img {
+    animation: vanish 0.8s forwards infinite;
+}
+
+@keyframes vanish {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* @media screen and (max-width: 1140px) {
+    .ticket-main-viewport-header {
+        margin-top: 25%;
+    }
+} */
+
+@media screen and (max-width: 640px) {
+    /* .ticket-main-viewport-header {
+        margin-top: 25%;
+    } */
+
+    .ticket-main-viewport-header h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .ticket-main-viewport-header h2:hover {
+        letter-spacing: 20px;
+    }
+}
+/**************** main viewport ****************/
+
+/**************** ticket page: date section ****************/
+.ticket-date-main-container{
+    background-color: var(--primary-white);
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-date-main-wrapper{
+    background-color: var(--persian-green);
+    width: 450px;
+    border-radius: 10px;
+}
+
+.ticket-date-calendar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px 10px;
+}
+
+.ticket-date-calendar-header .current-date{
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.ticket-date-calendar-header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    font-size: 1.9rem;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: 0.15s ease;
+    color: var(--primary-white);
+}
+
+.ticket-date-calendar-header .icons span:hover{
+    background: #ffffff;
+    color: var(--primary-black);
+}
+
+.ticket-date-calendar-body{
+    padding: 20px;
+}
+
+.ticket-date-calendar-body ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-left: 0;
+}
+
+.ticket-date-calendar-body .days{
+    margin-bottom: 20px;
+}
+
+.ticket-date-calendar-body .weeks li{
+    font-weight: 600;
+}
+
+.ticket-date-calendar-body ul li{
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.ticket-date-calendar-body .days li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.days li.inactive{
+    color:rgb(92, 92, 92);
+}
+
+.days li.active{
+    color: var(--primary-white);
+}
+
+.ticket-date-calendar-body .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.15s ease;
+}
+
+.days li:hover::before{
+    background: var(--primary-white);
+    box-shadow: 0 0 20px 0px rgba(239, 239, 239, 0.7);
+}
+
+.days li.active::before{
+    background: var(--primary-black);
+    box-shadow: 0 0 20px 0px rgba(24, 24, 24, 0.7);
+}
+
+.ticket-date-calendar-body .days li.selected::before{
+    background: var(--celadon);
+    box-shadow: 0 0 20px 0px rgba(174, 207, 164, 0.7);
+}
+
+.ticket-date-calendar-body hr{
+    height: 2.5px;
+    background-color: var(--primary-black);
+    border: none;
+    border-radius: 100px;
+    margin: 40px auto 20px;
+    width: 250px;
+    position: relative;
+}
+
+.ticket-date-calendar-time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-date-calendar-time.js-calendear-time {
+    color: transparent;
+    font-size: 20px;
+    position: relative;
+    animation: glowing 1s ease infinite;
+    color:var(--primary-white);
+  }
+  
+  @keyframes glowing {
+    0% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Back to the initial glow */
+    }
+  }
+/**************** ticket page: date section ****************/
+
+/**************** ticket page: count section ****************/
+.ticket-count-main-container{
+    background-color: var(--primary-white);
+    padding: 0 50px 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-count-main-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ticket-count-category{
+    margin-right: 150px;
+    width: 200px;
+    text-align: left;
+}
+
+.category-tag{
+    font-size: 13px;
+    color: var(--primary-grey);
+}
+
+.ticket-count-counter .count-number {
+    width: 70px;
+    text-align: center;
+  }
+
+.ticket-count-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-count-main-wrapper .material-symbols-rounded{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: 0.15s ease;
+    color: var(--primary-black);
+    background: var(--persian-green);
+}
+
+.ticket-count-main-wrapper .material-symbols-rounded:hover{
+    box-shadow: 0 0 20px 0px rgba(62, 140, 143, 0.7);
+}
+
+.ticket-count-main-wrapper .reset-icon{
+    height: 30px;
+    width: 30px;
+    margin: 0 8px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    transition: 0.15s ease;
+    color: var(--primary-black);
+    background: var(--persian-green);
+}
+/**************** ticket page: count section ****************/
+
+/**************** ticket page: duration section ****************/
+.table-section{
+    background-color: var(--primary-white);
+    padding: 0 200px 50px;
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.main-table{
+    max-width: 500px;
+}
+table td {
+    text-align: center;
+    padding: 1em;
+    max-width: 100px;
+}
+
+table tr {
+    padding: 0.45em;
+    transition: all 0.3s ease;
+}
+
+thead tr{
+    color: var(--persian-green);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(223, 223, 223);
+}
+
+.middle-title,
+tfoot td{
+    background-color: var(--persian-green);
+    color: var(--primary-white);
+}
+
+@media only screen and (max-width: 800px) {
+    .table-section{
+        padding: 10px;
+    }
+
+    table{
+        border: 3px solid rgb(26, 26, 26);
+    }
+
+    table thead tr{
+        display: none;
+    }
+
+    table tr{
+        display: block;
+    }
+
+    table td{
+        padding: .5em;
+    }
+
+    table td{
+        text-align: left;
+        display: block;
+    }
+
+    table td:before{
+        content: attr(data-title) "\00A0 : \00A0";
+        float: left;
+    }
+
+    tbody tr:nth-child(even){
+        background-color: var(--persian-green);
+        color: var(--primary-white);
+    }
+
+    table td {
+        max-width: 100%;
+    }
+}
+/**************** ticket page: duration section ****************/

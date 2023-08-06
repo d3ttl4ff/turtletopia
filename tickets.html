@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;700&family=Noto+Emoji&family=Poppins:wght@100;300;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tickets.css">
+    
+    <link rel="icon" href="icons/turtleicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <title>tickets</title>
+
+    <script type="module" src="/scripts/tickets.js" defer></script>
+    <script type="module" src="/scripts/duration.js" defer></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+        <nav class="nav-bar">
+            <ul class="nav-bar-items">
+                <li><a id="nav-a" class="active" href="index.html">Home</a></li>
+                <li><a href="categories.html">Turtles</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="hikkaduwa.html">Hikkaduwa</a></li>
+                <li>
+                    <a href="#">Other Hatcheries</a>
+                    <ul class="nav-bar-items-2">
+                        <li><a href="kosgoda.html">Kosgoda</a></li>
+                        <li><a href="bentota.html">Bentota</a></li>
+                    </ul>
+                </li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ticket-main-viewport">
+        <div class="ticket-main-viewport-images">
+            <div>
+                <img class="ticket-main-viewport-image" src="images/pexels-malinda-bandara-16508231.jpg" alt="">
+            </div>
+        </div>
+        <div class="ticket-main-viewport-header">
+            <div class="ticket-main-viewport-header-text">
+                <span>Buy</span>
+                <h2>Tickets</h2>
+            </div>
+        </div>
+    </div>
+    
+    <section class="ticket-date-main-container">
+        <div class="ticket-date-main-wrapper">
+            <div class="ticket-date-calendar-header">
+                <p class="current-date js-current-date"></p>
+                <div class="icons js-icons">
+                    <span id="home" class="material-symbols-rounded js-home-icon">Home</span>
+                    <span id="prev" class="material-symbols-rounded js-prev-next-icon">chevron_left</span>
+                    <span id="next" class="material-symbols-rounded js-prev-next-icon">chevron_right</span>
+                </div>
+            </div>
+    
+            <div class="ticket-date-calendar-body">
+                <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="days js-days"></ul>
+                <hr>
+                <span class="ticket-date-calendar-time js-calendear-time"></span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="ticket-count-main-container"></section>
+
+    <section class="table-section">
+        <div>
+            <h2>Summary Table</h2>
+            <hr><br>
+        </div>
+        <table class="main-table">
+            <tbody>
+                <tr>
+                    <td>Date</td>
+                    <td class="js-table-date">25/02/2023</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td class="js-table-time">08.00 am to 11.00 am</td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td class="js-table-duration">3 hrs ( 02 Normal : 01 Peak)</td>
+                </tr>
+                <tr class="middle-title">
+                    <td>Tickets</td>
+                    <td>Charges</td>
+                </tr>
+                <tr>
+                    <td>Sri Lankan Adults</td>
+                    <td class="js-table-sl-adult-count">$9</td>
+                </tr>
+                <tr>
+                    <td>Sri Lankan Child</td>
+                    <td class="js-table-sl-child-count">$10</td>
+                </tr>
+                <tr>
+                    <td>Foreigner Adult</td>
+                    <td class="js-table-fr-adult-count">$14</td>
+                </tr>
+                <tr>
+                    <td>Foreigner Child</td>
+                    <td class="js-table-fr-child-count">$12</td>
+                </tr>
+                <tr>
+                    <td>Infant</td>
+                    <td class="js-table-infant">$5</td>
+                </tr> 
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total Payable</td>
+                    <td class="js-table-total-bill">$56</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <section class="ticket-table-main-container">
+        asd
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h1><span class="span-1">Turtle</span><span class="span-2">topia</span></h1>
+                </div>
+    
+                <div class="footer-middle">
+                    <div class="footer-list">
+                        <ul>
+                            <h4>Pages</h4>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="donate.html">Donate</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-list">
+                        <ul>
+                            <h4>Turtles</h4>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="threats.html">Threats</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-list">
+                        <ul>
+                            <h4>Socials</h4>
+                            <li><a href="https://www.facebook.com/">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/">Instagram</a></li>
+                            <li><a href="https://twitter.com/">Twitter</a></li>
+                            <li><a href="https://vimeo.com/">Vimeo</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="footer-social-container">
+                    <div class="footer-social-list">
+                        <a href="https://www.facebook.com/"><img src="icons/facebook.svg" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="icons/instagram.svg" alt=""></a>
+                        <a href="https://twitter.com/"><img src="icons/twitter.svg" alt=""></a>
+                        <a href="https://vimeo.com/"><img src="icons/vimeo-v.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-base">
+                <span>© 2023 Turtletopia.com All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
