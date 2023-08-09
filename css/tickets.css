@@ -162,15 +162,18 @@
 }
 /**************** main viewport ****************/
 
-/**************** ticket page: date section ****************/
-.ticket-date-main-container{
+/**************** ticket page: first section ****************/
+.ticket-first-main-section{
     background-color: var(--primary-white);
     padding: 50px;
     display: flex;
+    column-gap: 100px;
     justify-content: center;
     align-items: center;
 }
+/**************** ticket page: first section ****************/
 
+/**************** ticket page: date section ****************/
 .ticket-date-main-wrapper{
     background-color: var(--persian-green);
     width: 450px;
@@ -230,12 +233,36 @@
 .ticket-date-calendar-body ul li{
     position: relative;
     width: calc(100% / 7);
+    
 }
 
 .ticket-date-calendar-body .days li{
     z-index: 1;
     cursor: pointer;
     margin-top: 30px;
+}
+
+.days{
+    align-items: center;
+}
+
+.days .clicked{
+    animation: fontSize 0.3s forwards;
+}
+
+
+@keyframes fontSize {
+    0% {
+        font-size: 16px;
+    }
+
+    50% {
+        font-size: 10px;
+    }
+
+    100% {
+        font-size: 16px;
+    }
 }
 
 .days li.inactive{
@@ -264,12 +291,12 @@
     box-shadow: 0 0 20px 0px rgba(239, 239, 239, 0.7);
 }
 
-.days li.active::before{
+/* .days li.active::before{
     background: var(--primary-black);
     box-shadow: 0 0 20px 0px rgba(24, 24, 24, 0.7);
-}
+} */
 
-.ticket-date-calendar-body .days li.selected::before{
+.days .clicked::before{
     background: var(--celadon);
     box-shadow: 0 0 20px 0px rgba(174, 207, 164, 0.7);
 }
@@ -282,6 +309,7 @@
     margin: 40px auto 20px;
     width: 250px;
     position: relative;
+    z-index: -1000;
 }
 
 .ticket-date-calendar-time{
@@ -296,7 +324,7 @@
     position: relative;
     animation: glowing 1s ease infinite;
     color:var(--primary-white);
-  }
+}
   
   @keyframes glowing {
     0% {
@@ -313,13 +341,11 @@
 
 /**************** ticket page: count section ****************/
 .ticket-count-main-container{
-    background-color: var(--primary-white);
-    padding: 0 50px 50px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--primary-white);
+    padding: 0 50px 50px;
 }
 
 .ticket-count-main-wrapper{
@@ -330,7 +356,7 @@
 }
 
 .ticket-count-category{
-    margin-right: 150px;
+    margin-right: 40px;
     width: 200px;
     text-align: left;
 }
@@ -341,7 +367,7 @@
 }
 
 .ticket-count-counter .count-number {
-    width: 70px;
+    width: 40px;
     text-align: center;
   }
 
@@ -384,15 +410,84 @@
 }
 /**************** ticket page: count section ****************/
 
+/**************** ticket page: time slot section ****************/
+.ticket-counter-and-time-slots-container{
+    background-color: var(--primary-white);
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+    flex-wrap: wrap;
+}
+
+.ticket-duration-main-container{
+    display: flex;
+    justify-content: center;
+   
+    border-radius: 8px;
+}
+
+.multiselect {
+    position: relative;
+    width: 350px;
+    margin: 10px;
+}
+
+.select-box {
+    background-color: var(--persian-green);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selected-text {
+    flex: 1;
+}
+
+.fa {
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* max-height: 150px; */
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 5px 10px;
+}
+
+.dropdown-content label:hover {
+    background-color: #f2f2f2;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+}
+  
+.time-slot {
+    margin-right: 10px;
+}
+
+.checkbox-content {
+    padding-left: 5px;
+}
+/**************** ticket page: time slot section ****************/
+
 /**************** ticket page: duration section ****************/
 .table-section{
     background-color: var(--primary-white);
     padding: 0 200px 50px;
     font-size: 0.9rem;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -411,8 +506,13 @@ table {
 .main-table{
     max-width: 500px;
 }
-table td {
+
+.table-count-price-td{
     text-align: center;
+}
+
+table td {
+    text-align: left;
     padding: 1em;
     max-width: 100px;
 }
@@ -436,7 +536,7 @@ tfoot td{
     color: var(--primary-white);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 400px) {
     .table-section{
         padding: 10px;
     }
