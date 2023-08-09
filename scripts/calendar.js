@@ -98,8 +98,12 @@ function nextMonth() {
 }
   
 function selectDate(day) {
+    const selectedDDMMYY = day + " " + currentMonthYear.textContent;
+
     document.querySelector('.js-table-date')
-        .innerHTML = day + " " + currentMonthYear.textContent
+        .innerHTML = selectedDDMMYY;
+    
+    localStorage.setItem('selected_DD_MM_YY', selectedDDMMYY);
 }
 
 function selectedDay(){

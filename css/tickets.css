@@ -422,7 +422,6 @@
 .ticket-duration-main-container{
     display: flex;
     justify-content: center;
-   
     border-radius: 8px;
 }
 
@@ -438,6 +437,11 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.select-box:hover{
+    box-shadow: 0 0 20px 0px rgba(62, 140, 143, 0.7);
 }
 
 .selected-text {

@@ -1,6 +1,6 @@
 import { ticketCategories } from '/scripts/ticketCategories.js';
 import { peakHours } from '/scripts/peakHours.js';
-// import { updateDuration } from '/scripts/dropdown.js';
+import { updateSelection, updateDuration } from '/scripts/dropdown.js';
 
 /**************** update time ****************/
 const calendarTime = document.querySelector('.js-calendear-time');
@@ -25,8 +25,11 @@ setInterval(updateCurrentTime, 1);
 /**************** update time ****************/
 
 //**************** ticket count ****************//
-function countTicket(){
+export function countTicket(){
     const addRemoveIcons = document.querySelectorAll('.js-add-remove');
+
+    updateSelection();
+updateDuration();
 
     ticketCategories.forEach((category) => {
         addRemoveIcons.forEach(icon => {
@@ -45,20 +48,21 @@ function countTicket(){
                     .innerHTML = category.counter;
 
                 localStorage.setItem(`ticketCount_${category.id}`, category.counter);
-                // localStorage.setItem(`ticketPrice_${category.id}`, ticketPrice);
                 
+                updateSelection();
+                updateDuration();
                 updateTotalBillAndCounts();
             });
         });
+        updateSelection();
         updateTotalBillAndCounts();
     });
 }
-
 /**************** ticket table ****************/
 let totalBill,
 totalTickets;
 
-function updateTotalBillAndCounts() {
+export function updateTotalBillAndCounts() {
     totalTickets = 0;
     totalBill = 0;
   
