@@ -28,9 +28,6 @@ setInterval(updateCurrentTime, 1);
 export function countTicket(){
     const addRemoveIcons = document.querySelectorAll('.js-add-remove');
 
-    updateSelection();
-updateDuration();
-
     ticketCategories.forEach((category) => {
         addRemoveIcons.forEach(icon => {
             icon.addEventListener('click', () => {
@@ -54,7 +51,7 @@ updateDuration();
                 updateTotalBillAndCounts();
             });
         });
-        updateSelection();
+        // updateSelection();
         updateTotalBillAndCounts();
     });
 }
@@ -80,8 +77,8 @@ export function updateTotalBillAndCounts() {
     document.querySelector(`.js-table-total-count`).innerHTML = totalTickets;
     document.querySelector(`.js-table-total-bill`).innerHTML = `$${totalBill}`;
 }
-/**************** ticket table ****************/
 
+/**************** ticket table ****************/
 let ticketCounterHTML = '';
 
 ticketCategories.forEach((category) => {

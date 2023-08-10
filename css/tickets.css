@@ -162,16 +162,18 @@
 }
 /**************** main viewport ****************/
 
-/**************** ticket page: first section ****************/
+/**************** ticket page: main section ****************/
 .ticket-first-main-section{
     background-color: var(--primary-white);
     padding: 50px;
     display: flex;
-    column-gap: 100px;
+    flex-wrap: wrap;
+    column-gap: 150px;
+    row-gap: 50px;
     justify-content: center;
     align-items: center;
 }
-/**************** ticket page: first section ****************/
+/**************** ticket page: main section ****************/
 
 /**************** ticket page: date section ****************/
 .ticket-date-main-wrapper{
@@ -309,7 +311,6 @@
     margin: 40px auto 20px;
     width: 250px;
     position: relative;
-    z-index: -1000;
 }
 
 .ticket-date-calendar-time{
@@ -417,6 +418,7 @@
     justify-content: center;
     column-gap: 100px;
     flex-wrap: wrap;
+    padding-bottom: 50px;
 }
 
 .ticket-duration-main-container{
@@ -489,11 +491,11 @@
 /**************** ticket page: duration section ****************/
 .table-section{
     background-color: var(--primary-white);
-    padding: 0 200px 50px;
+    /* padding: 0 200px 50px; */
     font-size: 0.9rem;
     margin: 0;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -518,7 +520,7 @@ table {
 table td {
     text-align: left;
     padding: 1em;
-    max-width: 100px;
+    /* max-width: 100px; */
 }
 
 table tr {

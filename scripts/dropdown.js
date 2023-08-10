@@ -1,7 +1,6 @@
 import { updateTotalBillAndCounts } from '/scripts/tickets.js';
 import { ticketCategories } from '/scripts/ticketCategories.js';
 
-
 function toggleDropdown() {
     const dropdownContent = document.querySelector('.dropdown-content');
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block'; 
@@ -41,7 +40,7 @@ export function updateSelection() {
         }
         else if (index === lastSelectedIndex) {
             lastSelectedIndex = -1;
-        }
+        } 
     });
     
     ticketCategories.forEach((category) => {
@@ -53,7 +52,7 @@ export function updateSelection() {
     
         localStorage.setItem(`ticketPrice_${category.id}`, totalTicketPrice);
     });
-    
+
     if (selectedRegularTimeSlots.length > 0 || selectedPeakTimeSlots.length > 0) {
         const startTime = selectedTotalTimeSlots[0].split(" - ")[0]; // Get start time of the top-most item
         const endTime = selectedTotalTimeSlots[selectedTotalTimeSlots.length - 1].split(" - ")[1]; // Get end time of the bottom-most item
@@ -71,8 +70,8 @@ export function updateSelection() {
         document.querySelector('.selected-text').textContent = 'Select Time Slots';
         document.querySelector('.js-table-time').innerHTML = 'N/A';
         document.querySelector('.js-table-duration').innerHTML = 'N/A';
-    }
-}
+    }  
+};
 
 export function updateDuration(){
     const checkbox = document.querySelectorAll('.js-selection');
@@ -80,12 +79,12 @@ export function updateDuration(){
     checkbox.forEach((checkbox) => {
         checkbox.addEventListener('change', () => {
             updateSelection();
+            updateTotalBillAndCounts();
         })
     })
 }
 
 realDropdown();
 updateDuration();
-
 
 

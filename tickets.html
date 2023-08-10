@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <title>tickets</title>
 
-    <script type="module" src="../scripts/calendar.js" defer></script>
-    <script type="module" src="../scripts/tickets.js" defer></script>
-    <script type="module" src="../scripts/dropdown.js" defer></script>
+    <script type="module" src="/scripts/calendar.js" defer></script>
+    <script type="module" src="/scripts/tickets.js" defer></script>
+    <script type="module" src="/scripts/dropdown.js" defer></script>
 </head>
 <body>
     <header>
@@ -85,6 +85,67 @@
                 </div>
             </div>
         </div>
+
+        <section class="table-section">
+            <!-- <div>
+                <h2>Summary Table</h2>
+                <hr><br>
+            </div> -->
+            <table class="main-table">
+                <tbody>
+                    <tr>
+                        <td>Date</td>
+                        <td colspan="2" class="table-count-price-td js-table-date">DD : MM : YYYY</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td colspan="2" class="table-count-price-td js-table-time">N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td colspan="2" class="table-count-price-td js-table-duration">N/A</td>
+                    </tr>
+                    <tr class="middle-title">
+                        <td>Category</td>
+                        <td>Ticket Count</td>
+                        <td>Charges</td>
+                    </tr>
+                    <tr>
+                        <td>Sri Lankan Adults</td>
+                        <td class="table-count-price-td js-table-sla-1000-count"></td>
+                        <td class="table-count-price-td js-table-sla-1000-price"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Sri Lankan Child</td>
+                        <td class="table-count-price-td js-table-slc-1001-count"></td>
+                        <td class="table-count-price-td js-table-slc-1001-price"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Adult</td>
+                        <td class="table-count-price-td js-table-fa-2000-count"></td>
+                        <td class="table-count-price-td js-table-fa-2000-price"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Child</td>
+                        <td class="table-count-price-td js-table-fc-2001-count"></td>
+                        <td class="table-count-price-td js-table-fc-2001-price"></td>
+                    </tr>
+                    <tr>
+                        <td>Infant</td>
+                        <td class="table-count-price-td js-table-inf-3000-count"></td>
+                        <td class="table-count-price-td js-table-inf-3000-price"></td>
+                    </tr> 
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total Payable</td>
+                        <td class="table-count-price-td js-table-total-count"></td>
+                        <td class="table-count-price-td js-table-total-bill"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
     </section>
 
     <section class="ticket-counter-and-time-slots-container">
@@ -105,66 +166,7 @@
     </section>
     
 
-    <section class="table-section">
-        <div>
-            <h2>Summary Table</h2>
-            <hr><br>
-        </div>
-        <table class="main-table">
-            <tbody>
-                <tr>
-                    <td>Date</td>
-                    <td colspan="2" class="table-count-price-td js-table-date">DD : MM : YYYY</td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td colspan="2" class="table-count-price-td js-table-time"></td>
-                </tr>
-                <tr>
-                    <td>Duration</td>
-                    <td colspan="2" class="table-count-price-td js-table-duration"></td>
-                </tr>
-                <tr class="middle-title">
-                    <td>Category</td>
-                    <td>Ticket Count</td>
-                    <td>Charges</td>
-                </tr>
-                <tr>
-                    <td>Sri Lankan Adults</td>
-                    <td class="table-count-price-td js-table-sla-1000-count"></td>
-                    <td class="table-count-price-td js-table-sla-1000-price"></td>
-                    
-                </tr>
-                <tr>
-                    <td>Sri Lankan Child</td>
-                    <td class="table-count-price-td js-table-slc-1001-count"></td>
-                    <td class="table-count-price-td js-table-slc-1001-price"></td>
-                </tr>
-                <tr>
-                    <td>Foreigner Adult</td>
-                    <td class="table-count-price-td js-table-fa-2000-count"></td>
-                    <td class="table-count-price-td js-table-fa-2000-price"></td>
-                </tr>
-                <tr>
-                    <td>Foreigner Child</td>
-                    <td class="table-count-price-td js-table-fc-2001-count"></td>
-                    <td class="table-count-price-td js-table-fc-2001-price"></td>
-                </tr>
-                <tr>
-                    <td>Infant</td>
-                    <td class="table-count-price-td js-table-inf-3000-count"></td>
-                    <td class="table-count-price-td js-table-inf-3000-price"></td>
-                </tr> 
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Total Payable</td>
-                    <td class="table-count-price-td js-table-total-count"></td>
-                    <td class="table-count-price-td js-table-total-bill"></td>
-                </tr>
-            </tfoot>
-        </table>
-    </section>
+    
 
     <footer>
         <div class="footer-main">
