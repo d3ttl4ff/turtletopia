@@ -45,13 +45,12 @@ export function countTicket(){
                     .innerHTML = category.counter;
 
                 localStorage.setItem(`ticketCount_${category.id}`, category.counter);
-                
+
                 updateSelection();
-                updateDuration();
                 updateTotalBillAndCounts();
             });
         });
-        // updateSelection();
+        updateSelection();
         updateTotalBillAndCounts();
     });
 }

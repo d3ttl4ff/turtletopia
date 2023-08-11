@@ -16,7 +16,7 @@ export const renderCalendar = () => {
     let daysHTML = '';
     for (let i = prevMonthDays; i > 0; i--) {
         const date = new Date(prevMonthLastDay.getFullYear(), prevMonthLastDay.getMonth(), prevMonthLastDay.getDate() - i + 1);
-        daysHTML += `<li class="inactive">${date.getDate()}</li>`; 
+        daysHTML += `<li class="inactive-prev fade-in">${date.getDate()}</li>`; 
     }
 
     for (let i = 1; i <= daysInMonth; i++) {
@@ -26,16 +26,16 @@ export const renderCalendar = () => {
         dayElement.textContent = i;
 
         if (date < new Date()) {
-            daysHTML += `<li  class="inactive" calendar-day">${i}</li>`;
+            daysHTML += `<li class="inactive-prev fade-in" calendar-day">${i}</li>`;
         } 
         else{
-            daysHTML += `<li class="calendar-day js-select-day">${i}</li>`;
+            daysHTML += `<li class="calendar-day js-select-day fade-in">${i}</li>`;
         }
     }
     
     for (let i = 1; i <= nextMonthDays; i++) {
         const date = new Date(lastDayOfMonth.getFullYear(), lastDayOfMonth.getMonth() + 1, i);
-        daysHTML += `<li class="inactive calendar-day">${i}</li>`
+        daysHTML += `<li class="inactive-next calendar-day">${i}</li>`
     }
 
     daysContainer.innerHTML = daysHTML;
@@ -46,7 +46,6 @@ renderCalendar();
 
 prevNextIcon.forEach((icon) => {
     icon.addEventListener('click', () => {
-
         if(icon.id === 'home'){
             homeMonth();
         }

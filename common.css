@@ -36,7 +36,7 @@ html::-webkit-scrollbar-track {
 }
 
 body{
-    background-image: url('images/qwert.jpg');
+    background-image: url('images/qwert.webp');
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;

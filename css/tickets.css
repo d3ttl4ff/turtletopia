@@ -178,7 +178,7 @@
 /**************** ticket page: date section ****************/
 .ticket-date-main-wrapper{
     background-color: var(--persian-green);
-    width: 450px;
+    max-width: 450px;
     border-radius: 10px;
 }
 
@@ -208,8 +208,9 @@
 }
 
 .ticket-date-calendar-header .icons span:hover{
-    background: #ffffff;
+    background: var(--primary-white);
     color: var(--primary-black);
+    box-shadow: 0 0 20px 0px rgba(239, 239, 239, 0.7);
 }
 
 .ticket-date-calendar-body{
@@ -267,12 +268,29 @@
     }
 }
 
-.days li.inactive{
+.days li.inactive-prev{
+    color:rgb(92, 92, 92);
+}
+
+.days li.inactive-next{
     color:rgb(92, 92, 92);
 }
 
 .days li.active{
     color: var(--primary-white);
+}
+
+.days li {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .ticket-date-calendar-body .days li::before{
@@ -292,11 +310,6 @@
     background: var(--primary-white);
     box-shadow: 0 0 20px 0px rgba(239, 239, 239, 0.7);
 }
-
-/* .days li.active::before{
-    background: var(--primary-black);
-    box-shadow: 0 0 20px 0px rgba(24, 24, 24, 0.7);
-} */
 
 .days .clicked::before{
     background: var(--celadon);
@@ -327,17 +340,17 @@
     color:var(--primary-white);
 }
   
-  @keyframes glowing {
+@keyframes glowing {
     0% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     }
     50% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
     100% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Back to the initial glow */
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Back to the initial glow */
     }
-  }
+}
 /**************** ticket page: date section ****************/
 
 /**************** ticket page: count section ****************/
