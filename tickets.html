@@ -92,7 +92,7 @@
                 <hr><br>
             </div> -->
             <table class="main-table">
-                <tbody>
+                <tbody class="js-table-category-row">
                     <tr>
                         <td>Date</td>
                         <td colspan="2" class="table-count-price-td js-table-date">DD : MM : YYYY</td>
@@ -109,6 +109,11 @@
                         <td>Category</td>
                         <td>Ticket Count</td>
                         <td>Charges</td>
+                    </tr>
+                    <tr class="js-table-no-categories">
+                        <td>N/A</td>
+                        <td class="table-count-price-td js-table-na-count">N/A</td>
+                        <td class="table-count-price-td js-table-na-price">N/A</td>
                     </tr>
                     <tr>
                         <td>Sri Lankan Adults</td>
@@ -155,7 +160,7 @@
                 <div class="multiselect">
                     <div class="select-box" ">
                         <span class="selected-text">Select Time Slots</span>
-                        <i class="fa fa-caret-down"></i>
+                        <span id="toggle-icon" class="material-symbols-rounded">expand_circle_down</span>
                     </div>
                     <div class="dropdown-content"></div>
                 </div>
@@ -163,9 +168,6 @@
         </div>
         
     </section>
-    
-
-    
 
     <footer>
         <div class="footer-main">

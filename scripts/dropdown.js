@@ -3,7 +3,8 @@ import { ticketCategories } from '/scripts/ticketCategories.js';
 
 function toggleDropdown() {
     const dropdownContent = document.querySelector('.dropdown-content');
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block'; 
+    
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
 export function realDropdown(){

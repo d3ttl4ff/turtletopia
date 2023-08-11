@@ -2,10 +2,12 @@ import { ticketCategories } from '/scripts/ticketCategories.js';
 import { peakHours } from '/scripts/peakHours.js';
 import { updateSelection, updateDuration } from '/scripts/dropdown.js';
 
-/**************** update time ****************/
-const calendarTime = document.querySelector('.js-calendear-time');
+let countTicketExecuted = false;
 
+/**************** update time ****************/
 function updateCurrentTime(){
+    const calendarTime = document.querySelector('.js-calendear-time');
+
     const currentTime = new Date();
     let hours = currentTime.getHours();
     const minutes = currentTime.getMinutes().toString().padStart(2, '0');
@@ -24,8 +26,9 @@ updateCurrentTime();
 setInterval(updateCurrentTime, 1);
 /**************** update time ****************/
 
-//**************** ticket count ****************//
+/**************** ticket count ****************/
 export function countTicket(){
+    countTicketExecuted = true;
     const addRemoveIcons = document.querySelectorAll('.js-add-remove');
 
     ticketCategories.forEach((category) => {
@@ -48,36 +51,70 @@ export function countTicket(){
 
                 updateSelection();
                 updateTotalBillAndCounts();
+                tableCategoryUpdate();
             });
         });
+
         updateSelection();
         updateTotalBillAndCounts();
+        tableCategoryUpdate()
     });
 }
-/**************** ticket table ****************/
-let totalBill,
-totalTickets;
+/**************** ticket count ****************/
 
+/**************** ticket table category update ****************/
+function tableCategoryUpdate(){
+    let noCategoriesSelected = true;
+
+    ticketCategories.forEach((category) => {
+        const rowElement = document.querySelector(`.js-table-${category.id}-count`).closest('tr');
+        
+        if (category.counter > 0) {
+            rowElement.style.display = 'table-row';
+            noCategoriesSelected = false;
+        } else {
+            rowElement.style.display = 'none'; 
+        }
+    });
+
+    // Display the "N/A" row when no categories are selected
+    const noCategoriesRow = document.querySelector('.js-table-no-categories');
+    if (noCategoriesSelected) {
+        noCategoriesRow.style.display = 'table-row';
+    } else {
+        noCategoriesRow.style.display = 'none';
+    }
+}
+/**************** ticket table category update ****************/
+
+/**************** ticket table ****************/
 export function updateTotalBillAndCounts() {
-    totalTickets = 0;
-    totalBill = 0;
+    let totalBill = 0;
+    let totalTickets = 0;
   
     ticketCategories.forEach((category) => {
-      const ticketCount = parseInt(localStorage.getItem(`ticketCount_${category.id}`)) || 0;
-      const ticketPrice = parseInt(localStorage.getItem(`ticketPrice_${category.id}`)) || 0;
+        const ticketCount = parseInt(localStorage.getItem(`ticketCount_${category.id}`)) || 0;
+        const ticketPrice = parseInt(localStorage.getItem(`ticketPrice_${category.id}`)) || 0;
   
-      totalTickets += ticketCount;
-      totalBill += ticketPrice;
+        totalTickets += ticketCount;
+        totalBill += ticketPrice;
   
-      document.querySelector(`.js-table-${category.id}-count`).innerHTML = ticketCount;
-      document.querySelector(`.js-table-${category.id}-price`).innerHTML = `$${ticketPrice}`;
+        document.querySelector(`.js-table-${category.id}-count`).innerHTML = ticketCount;
+        document.querySelector(`.js-table-${category.id}-price`).innerHTML = `$${ticketPrice}`;
     });
   
     document.querySelector(`.js-table-total-count`).innerHTML = totalTickets;
     document.querySelector(`.js-table-total-bill`).innerHTML = `$${totalBill}`;
-}
 
+    if (countTicketExecuted !== true) {
+        ticketCategories.forEach((category) => {
+            localStorage.setItem(`ticketCount_${category.id}`, 0);
+        });
+    }
+}
 /**************** ticket table ****************/
+
+/**************** ticket count HTMl ****************/
 let ticketCounterHTML = '';
 
 ticketCategories.forEach((category) => {
@@ -105,7 +142,7 @@ document.querySelector('.ticket-count-main-container')
     .innerHTML = ticketCounterHTML;
 
 countTicket();
-//**************** ticket count ****************//
+/**************** ticket count HTMl ****************/
 
 /**************** duration ****************/
 let timeSlotsHTMl = "";
@@ -131,5 +168,3 @@ peakHours.forEach((timeSlot, index) => {
 document.querySelector('.dropdown-content')
     .innerHTML = timeSlotsHTMl;
 /**************** duration ****************/
-
-
