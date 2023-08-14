@@ -6,11 +6,15 @@ const fullname = document.getElementById("fullname");
 const mobilenumber = document.getElementById("mobilenumber");
 const email = document.getElementById("email");
 const email2 = document.getElementById("email2");
+let allFieldsValid = false;
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-
     validateInputs();
+
+    if (allFieldsValid) {
+        window.location.href = 'payment.html';
+    }
 });
 
 mobilenumber.addEventListener("input", function(event) {
@@ -124,6 +128,7 @@ const isValidPhoneNo = mobilenumber => {
     return re.test(String(mobilenumber));
 }
 
+// submitButton.disabled = true;
 const validateInputs = () => {
     const fullnameValue = fullname.value.trim();
     const emailValue = email.value.trim();
@@ -160,6 +165,17 @@ const validateInputs = () => {
         setError(email2, 'Email addresses do not match');
     } else {
         setSuccess(email2);
+    }
+
+    if (
+        fullname.parentElement.classList.contains('success') &&
+        mobilenumber.parentElement.classList.contains('success') &&
+        email.parentElement.classList.contains('success') &&
+        email2.parentElement.classList.contains('success')
+    ) {
+        allFieldsValid = true;
+    } else {
+        allFieldsValid = false;
     }
 }
 
@@ -201,7 +217,7 @@ detailDate.innerHTML = localStorage.getItem('selected_DD_MM_YY');
 detailTime.innerHTML = localStorage.getItem('duration');
 detailDuration.innerHTML = localStorage.getItem('time_slots');
 detailTotalTickets.innerHTML = localStorage.getItem('totalCount');
-detailTotalBill.innerHTML = localStorage.getItem('totalBill');
+detailTotalBill.innerHTML = "$" + localStorage.getItem('totalBill');
 
 ticketCategories.forEach((category) => {
     const ticketCount = document.querySelector(`.js-table-${category.id}-count`);
@@ -215,7 +231,6 @@ ticketCategories.forEach((category) => {
     else{
         ticketPrice.innerHTML = '$' + localStorage.getItem(`ticketPrice_${category.id}`);
     }
-    
 })
 
 fullname.addEventListener("input", function(event) {
@@ -234,7 +249,6 @@ email2.addEventListener("input", function(event) {
     const inputEmail = event.target.value;
     localStorage.setItem("email", inputEmail);
     detailEmail.innerHTML = localStorage.getItem('email');
-    
 });
 
 dropdownList.addEventListener("click", function(event) {
@@ -246,6 +260,7 @@ dropdownList.addEventListener("click", function(event) {
 
 const resetButton = document.getElementById("resetButton");
 const submitButton = document.getElementById("submitButton");
+const backButton = document.getElementById("back-button");
 
 resetButton.addEventListener('click', () => {
     localStorage.removeItem("fullName");
@@ -254,8 +269,8 @@ resetButton.addEventListener('click', () => {
     localStorage.removeItem("selectedGender");
 });
 
-submitButton.addEventListener('click', () => {
-    window.location.href = 'details.html';
+backButton.addEventListener('click', () => {
+    window.location.href = 'tickets.html';
 });
 
 

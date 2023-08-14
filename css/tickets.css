@@ -535,6 +535,17 @@
     text-align: center;
 }
 
+.detail-table-section{
+    background-color: var(--primary-white);
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
     margin: 0;
@@ -656,7 +667,21 @@ tfoot td{
     padding-bottom: 50px;
 }
 
-.confirm-button {
+.back-button-main-conatainer,
+.back-payment-button-main-conatainer{
+    background-color: var(--primary-white);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.confirm-button,
+.back-button,
+.back-details-button,
+.back-payment-button {
     border: none;
     background-color: var(--primary-black);
     color: var(--primary-white);
@@ -668,32 +693,59 @@ tfoot td{
 }
 
 .confirm-button:disabled,
-.confirm-button:disabled:hover {
+.confirm-button:disabled:hover,
+.back-button:disabled,
+.back-button:disabled:hover,
+.back-details-button:disabled,
+.back-details-button:disabled:hover,
+.back-payment-button:disabled,
+.back-payment-button:disabled:hover  {
     background-color: rgb(133, 133, 133);
     color: var(--primary-white);
 }
 
-.confirm-button a {
+.confirm-button a,
+.back-button a,
+.back-details-button a,
+.back-payment-button a {
     color: var(--primary-white);
 }
 
-.confirm-button:hover {
+.confirm-button:hover,
+.back-button:hover,
+.back-details-button:hover,
+.back-payment-button:hover {
     background-color: var(--persian-green);
     border-radius: 50px;
 }
 
-.confirm-button:active {
+.confirm-button:active,
+.back-button:active,
+.back-details-button:active,
+.back-payment-button:active {
     transform: scale(0.95);
 }
 
-.confirm-button span {
+.confirm-button span,
+.back-button span,
+.back-details-button span,
+.back-payment-button span {
     vertical-align: middle;
     display: inline-block;
     transition: all 0.3s ease;
 }
 
-.confirm-button:hover span {
+.confirm-button:hover span,
+.back-button:hover span,
+.back-details-button span,
+.back-payment-button span {
     animation: vanish 0.5s forwards;
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /**************** ticket page: confirm-button ****************/
 
@@ -703,7 +755,7 @@ tfoot td{
 /**************** details page: first section ****************/
 .details-page-first-section-main-container{
     background-color: var(--primary-white);
-    padding: 50px;
+    padding: 50px 50px 0;
     display: flex;
     column-gap: 100px;
     justify-content: center;
@@ -1052,3 +1104,143 @@ tfoot td{
 }
 /**************** details page: first section ****************/
 
+/**************** ## ****************/
+/**************** ## ****************/
+
+/**************** payment page ****************/
+.payment-page-first-section-main-container{
+    background-color: var(--primary-white);
+    padding: 50px;
+    display: flex;
+    /* flex-direction: column; */
+    /* column-gap: 100px; */
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-container{
+    background-color: var(--persian-green);
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+    flex-wrap: wrap;
+}
+
+.container {
+    /* width: 100%; */
+    height: 100%;
+    margin: 3% auto;
+}
+
+.ui {
+    border: 0;
+    box-shadow: 0 0 10*x 0 var(--persian-green);
+    border-radius: 8px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    
+    background-color: var(--persian-green);
+}
+
+.container-left {
+    width: 50%;
+}
+
+#credit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.number-container, .name-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.expiration-container, .cvv-container {
+    width: 50%;
+}
+
+.infos-container {
+    display: flex;
+}
+
+#credit-card input {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-weight: 600;
+    font-size: 1.1rem;
+    outline: 0;
+    width: 90%;
+}
+
+#credit-card input [type="text"]:focus{
+    border: 1px solid #95b8d1
+}
+
+#credit-card input#valid-thru-text, input#cvv-text {
+    width: 80%;
+}
+
+#credit-card input[type="submit"] {
+    width: 95%;
+    background-color: var(--primary-white);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 895px) {
+    .ui {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-left {
+        width: 100%;
+    }
+
+    .payment-container{
+        margin-top: 50px;
+    }
+}
+/**************** payment page ****************/
+.confirmation-page-first-section-main-container{
+    background-color: var(--primary-white);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.confirmation-page-first-section-main-container h2 {
+    color: var(--persian-green);
+}
+
+.confirmation-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.qwe{
+    display: flex;
+    column-gap: 50px;
+}
+
+.confirmation-container h2{
+    color: var(--primary-black);
+}
