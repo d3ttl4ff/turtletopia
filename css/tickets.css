@@ -168,7 +168,7 @@
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 150px;
+    column-gap: 100px;
     row-gap: 50px;
     justify-content: center;
     align-items: center;
@@ -354,12 +354,19 @@
 /**************** ticket page: date section ****************/
 
 /**************** ticket page: count section ****************/
+.ticket-coounter-dropdown-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .ticket-count-main-container{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     background-color: var(--primary-white);
-    padding: 0 50px 50px;
+    padding-bottom: 50px;
 }
 
 .ticket-count-main-wrapper{
@@ -432,7 +439,7 @@
     justify-content: center;
     column-gap: 100px;
     flex-wrap: wrap;
-    padding-bottom: 50px;
+    padding: 0 50px 50px;
 }
 
 .ticket-duration-main-container{
@@ -520,11 +527,9 @@
 /**************** ticket page: duration section ****************/
 .table-section{
     background-color: var(--primary-white);
-    /* padding: 0 200px 50px; */
     font-size: 0.9rem;
     margin: 0;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -536,9 +541,6 @@ table {
     width: 100%;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-}
-
-.main-table{
     max-width: 500px;
 }
 
@@ -564,6 +566,10 @@ tbody tr:nth-child(odd) {
     background-color: rgb(223, 223, 223);
 }
 
+tbody .middle-title:nth-child(odd) {
+    background-color: var(--persian-green);
+}
+
 .middle-title,
 tfoot td{
     background-color: var(--persian-green);
@@ -572,6 +578,29 @@ tfoot td{
 
 .js-table-no-categories{
     display: none;
+}
+
+.table-category-fade-in{
+    animation: category-fade-in 0.5s ease-in-out;
+}
+
+@keyframes category-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    table {
+        margin: 30px;
+    }
+
+    .multiselect {
+        width: 250px;
+    }
 }
 
 /* @media only screen and (max-width: 400px) {
@@ -615,3 +644,411 @@ tfoot td{
     }
 } */
 /**************** ticket page: duration section ****************/
+
+/**************** ticket page: confirm-button ****************/
+.confirm-button-main-conatainer{
+    background-color: var(--primary-white);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.confirm-button {
+    border: none;
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease, background-color 0.3s ease;
+}
+
+.confirm-button:disabled,
+.confirm-button:disabled:hover {
+    background-color: rgb(133, 133, 133);
+    color: var(--primary-white);
+}
+
+.confirm-button a {
+    color: var(--primary-white);
+}
+
+.confirm-button:hover {
+    background-color: var(--persian-green);
+    border-radius: 50px;
+}
+
+.confirm-button:active {
+    transform: scale(0.95);
+}
+
+.confirm-button span {
+    vertical-align: middle;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.confirm-button:hover span {
+    animation: vanish 0.5s forwards;
+}
+/**************** ticket page: confirm-button ****************/
+
+/**************** ## ****************/
+/**************** ## ****************/
+
+/**************** details page: first section ****************/
+.details-page-first-section-main-container{
+    background-color: var(--primary-white);
+    padding: 50px;
+    display: flex;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-form-container{
+    padding: 50px;
+    text-align: center;
+}
+
+.details-form hr{
+    background-color: var(--primary-black);
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px 0;
+    width: 100%;
+}
+
+.details-form-inputbox{
+    position: relative;
+    min-width: 250px;
+    width: 100%;
+}
+
+.main-user-info,
+.address-info,
+.payment-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.details-form-inputbox input{
+    /* width: 100%; */
+    width: 350px;
+    padding: 10px;
+    border: 1px solid var(--persian-green);
+    background: var(--primary-white);
+    border-radius: 3px;
+    outline: none;
+    color: var(--primary-black);
+    font-size: 1em;
+    transition: 0.3s ease-out;
+}
+
+.details-form-inputbox span{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: var(--primary-white);
+    text-transform: uppercase;
+    transition: 0.3s ease-out;
+}
+
+.details-form-inputbox input ~ span{
+    transform: translateX(10px) translateY(-50px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: var(--persian-green);
+    border-left: 1px solid var(--primary-white);
+    letter-spacing: 0.2em;
+}
+
+.details-form-inputbox input:valid ~ span,
+.details-form-inputbox input:focus ~ span {
+    background: var(--persian-green);
+    color: var(--primary-white);
+    border-radius: 2px;
+}
+
+.details-form-inputbox input:valid,
+.details-form-inputbox input:focus{
+    border: 1.5px solid var(--primary-black);
+}
+
+.details-form-inputbox.success input{
+    border-color: var(--persian-green);
+}
+
+.details-form-inputbox.error input{
+    border-color: rgb(139, 0, 0);
+}
+
+.details-form-inputbox .error{
+    color: rgb(139, 0, 0);
+    font-size: 9px;
+    height: 13px;
+}
+
+.details-form-inputbox.error input ~ span{
+    background: rgb(139, 0, 0);
+}
+
+.details-form-inputbox.success input ~ span{
+    background: var(--persian-green);
+}
+
+.my-input::placeholder{
+    color: transparent;
+}
+
+.my-input:focus::placeholder {
+    color: rgb(85, 85, 85);
+}
+
+.gender-details-info{
+    margin: 0;
+    width: 100%;
+}
+
+.gender-details-info span{
+    color: var(--primary-white);
+}
+
+.gender-category{
+    border: 1px solid var(--primary-white);
+    border-radius: 3px;
+    padding: 10px;
+    color: var(--primary-white);
+}
+
+.form-buttons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.button-for-all-2 {
+    border: none;
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease, background-color 0.3s ease;
+}
+
+.button-for-all-2:hover {
+    background-color: var(--primary-black);
+    border-radius: 50px;
+}
+
+.button-for-all-2:active {
+    transform: scale(0.95);
+}
+
+@media only screen and (max-width:948px) {
+    .payment-info {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:648px){
+    .main-user-info,
+    .address-info,
+    .payment-info{
+        width: 100%;
+    }
+}
+
+.flag-selecctor{
+    width: 350px;
+    height: 0;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+#flagSelectField{
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+    box-sizing: border-box;
+    background: var(--primary-white);
+    border: 1.5px solid var(--persian-green);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#flag-list{
+    /* width: 100%; */
+    background: var(--primary-white);
+    border: 1.5px solid var(--persian-green);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0;
+
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+#flag-list::-webkit-scrollbar {
+    width: 11px;
+}
+
+#flag-list::-webkit-scrollbar-thumb {
+    background-color: var(--persian-green);
+    border-radius: 20px;
+    border: 2px solid var(--primary-white);
+    background-clip: content-box;
+}
+
+#flag-list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.flag-options{
+    width: 100%;
+    padding: 10px 0 10px 70px;
+    list-style: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    display: flex;
+    column-gap: 10px;
+}
+
+.flag-options img{
+    width: 25px;
+    position: absolute;
+    top: 35%;
+    left: 25px;
+}
+
+.flag-options:hover{
+    background: var(--tea-green);
+}
+
+.hide-flag-list {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s 0.5s;
+}
+
+.show-flag-list {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0s;
+}
+
+.rotate-arrow{
+    transform: rotate(180deg);
+}
+
+.js-flag-arrow{
+    transition: transform 0.5s;
+}
+
+.gender-list{
+    display: flex;
+    justify-content: center;
+}
+
+.custom-dropdown {
+    width: 350px;
+    height: 0;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.dropdown-header {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+    box-sizing: border-box;
+    background: var(--primary-white);
+    border: 1.5px solid var(--persian-green);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.dropdown-list {
+    background: var(--primary-white);
+    border: 1.5px solid var(--persian-green);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+.dropdown-list::-webkit-scrollbar {
+    width: 11px;
+}
+
+.dropdown-list::-webkit-scrollbar-thumb {
+    background-color: var(--persian-green);
+    border-radius: 20px;
+    border: 2px solid var(--primary-white);
+    background-clip: content-box;
+}
+
+.dropdown-list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.dropdown-option {
+    width: 100%;
+    padding: 10px 0 10px 20px;
+    list-style: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.dropdown-option:hover {
+    background: var(--tea-green);
+}
+
+.hide-dropdown-list {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s 0.5s;
+}
+
+.show-dropdown-list {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0s;
+}
+/**************** details page: first section ****************/
+

@@ -1,9 +1,9 @@
-import { updateTotalBillAndCounts } from '/scripts/tickets.js';
-import { ticketCategories } from '/scripts/ticketCategories.js';
+import { updateTotalBillAndCounts, tableCategoryUpdate } from '/scripts/ticket_scripts/tickets.js';
+import { ticketCategories } from '/scripts/ticket_scripts/ticketCategories.js';
 
 function toggleDropdown() {
     const dropdownContent = document.querySelector('.dropdown-content');
-    
+
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
@@ -72,20 +72,24 @@ export function updateSelection() {
         document.querySelector('.js-table-time').innerHTML = 'N/A';
         document.querySelector('.js-table-duration').innerHTML = 'N/A';
     }  
+
+    let timeSlots = document.querySelector('.js-table-duration').innerHTML;
+    let duration = document.querySelector('.js-table-time').innerHTML;
+    localStorage.setItem('time_slots', timeSlots);
+    localStorage.setItem('duration', duration);
 };
 
 export function updateDuration(){
     const checkbox = document.querySelectorAll('.js-selection');
-
     checkbox.forEach((checkbox) => {
         checkbox.addEventListener('change', () => {
             updateSelection();
             updateTotalBillAndCounts();
         })
     })
+    
 }
-
+tableCategoryUpdate();
 realDropdown();
 updateDuration();
-
 

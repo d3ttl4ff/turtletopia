@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <title>tickets</title>
 
-    <script type="module" src="/scripts/calendar.js" defer></script>
-    <script type="module" src="/scripts/dropdown.js" defer></script>
-    <script type="module" src="/scripts/tickets.js" defer></script>
+    <script type="module" src="/scripts/ticket_scripts/calendar.js" defer></script>
+    <script type="module" src="/scripts/ticket_scripts/dropdown.js" defer></script>
+    <script type="module" src="/scripts/ticket_scripts/tickets.js" defer></script>
 </head>
 <body>
     <header>
@@ -86,6 +86,24 @@
             </div>
         </div>
 
+        <div class="ticket-coounter-dropdown-wrapper">
+            <div class="ticket-count-main-container"></div>
+
+            <div class="ticket-duration-main-container">
+                <div class="ticket-dropdown-duration-main-container">
+                    <div class="multiselect">
+                        <div class="select-box" ">
+                            <span class="selected-text">Select Time Slots</span>
+                            <span id="toggle-icon" class="material-symbols-rounded">expand_circle_down</span>
+                        </div>
+                        <div class="dropdown-content"></div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section class="ticket-counter-and-time-slots-container">
         <section class="table-section">
             <!-- <div>
                 <h2>Summary Table</h2>
@@ -115,27 +133,27 @@
                         <td class="table-count-price-td js-table-na-count">N/A</td>
                         <td class="table-count-price-td js-table-na-price">N/A</td>
                     </tr>
-                    <tr>
+                    <tr class="table-category-fade-in">
                         <td>Sri Lankan Adults</td>
                         <td class="table-count-price-td js-table-sla-1000-count"></td>
                         <td class="table-count-price-td js-table-sla-1000-price"></td>  
                     </tr>
-                    <tr>
+                    <tr class="table-category-fade-in">
                         <td>Sri Lankan Child</td>
                         <td class="table-count-price-td js-table-slc-1001-count"></td>
                         <td class="table-count-price-td js-table-slc-1001-price"></td>
                     </tr>
-                    <tr>
+                    <tr class="table-category-fade-in">
                         <td>Foreigner Adult</td>
                         <td class="table-count-price-td js-table-fa-2000-count"></td>
                         <td class="table-count-price-td js-table-fa-2000-price"></td>
                     </tr>
-                    <tr>
+                    <tr class="table-category-fade-in">
                         <td>Foreigner Child</td>
                         <td class="table-count-price-td js-table-fc-2001-count"></td>
                         <td class="table-count-price-td js-table-fc-2001-price"></td>
                     </tr>
-                    <tr>
+                    <tr class="table-category-fade-in">
                         <td>Infant</td>
                         <td class="table-count-price-td js-table-inf-3000-count"></td>
                         <td class="table-count-price-td js-table-inf-3000-price"></td>
@@ -149,25 +167,13 @@
                     </tr>
                 </tfoot>
             </table>
-        </section>
+        </section>  
     </section>
 
-    <section class="ticket-counter-and-time-slots-container">
-        <div class="ticket-count-main-container"></div>
-
-        <div class="ticket-duration-main-container">
-            <div class="ticket-dropdown-duration-main-container">
-                <div class="multiselect">
-                    <div class="select-box" ">
-                        <span class="selected-text">Select Time Slots</span>
-                        <span id="toggle-icon" class="material-symbols-rounded">expand_circle_down</span>
-                    </div>
-                    <div class="dropdown-content"></div>
-                </div>
-            </div>
-        </div>
-        
+    <section class="confirm-button-main-conatainer">
+        <button id="confirm-button" class="confirm-button js-confirm-button" disabled>Confirm</button>
     </section>
+    
 
     <footer>
         <div class="footer-main">

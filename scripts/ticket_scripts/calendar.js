@@ -3,6 +3,8 @@ const daysContainer = document.querySelector('.days');
 let currentDate = new Date();
 const prevNextIcon = document.querySelectorAll('.js-icons span');
 
+currentMonthYear.textContent = `${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(currentDate)}`;
+
 export const renderCalendar = () => {
     const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
@@ -10,8 +12,6 @@ export const renderCalendar = () => {
     const daysInMonth = lastDayOfMonth.getDate();
     const prevMonthDays = firstDayOfMonth.getDay();
     const nextMonthDays = 6 - lastDayOfMonth.getDay();
-
-    currentMonthYear.textContent = `${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(currentDate)}`;
 
     let daysHTML = '';
     for (let i = prevMonthDays; i > 0; i--) {
@@ -42,7 +42,7 @@ export const renderCalendar = () => {
     selectedDay();
     selectedDayEffect();
 }
-renderCalendar();
+// renderCalendar();
 
 prevNextIcon.forEach((icon) => {
     icon.addEventListener('click', () => {
@@ -116,6 +116,12 @@ function selectedDay(){
         })
     });
 }
+
+const tableCurrentMonthYear = document.querySelector('.js-table-date');
+
+const day = currentDate.getDate();
+tableCurrentMonthYear.textContent =`${day} ${currentMonthYear.textContent}`;
+localStorage.setItem('selected_DD_MM_YY', tableCurrentMonthYear.textContent);
 
 renderCalendar();
 

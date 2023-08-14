@@ -1,8 +1,6 @@
-import { ticketCategories } from '/scripts/ticketCategories.js';
-import { peakHours } from '/scripts/peakHours.js';
-import { updateSelection, updateDuration } from '/scripts/dropdown.js';
-
-let countTicketExecuted = false;
+import { ticketCategories } from '/scripts/ticket_scripts/ticketCategories.js';
+import { peakHours } from '/scripts/ticket_scripts/peakHours.js';
+import { updateSelection } from '/scripts/ticket_scripts/dropdown.js';
 
 /**************** update time ****************/
 function updateCurrentTime(){
@@ -27,8 +25,8 @@ setInterval(updateCurrentTime, 1);
 /**************** update time ****************/
 
 /**************** ticket count ****************/
+let countTicketExecuted = false;
 export function countTicket(){
-    countTicketExecuted = true;
     const addRemoveIcons = document.querySelectorAll('.js-add-remove');
 
     ticketCategories.forEach((category) => {
@@ -57,13 +55,14 @@ export function countTicket(){
 
         updateSelection();
         updateTotalBillAndCounts();
-        tableCategoryUpdate()
+        tableCategoryUpdate();  
     });
+    countTicketExecuted = true;
 }
 /**************** ticket count ****************/
 
 /**************** ticket table category update ****************/
-function tableCategoryUpdate(){
+export function tableCategoryUpdate(){
     let noCategoriesSelected = true;
 
     ticketCategories.forEach((category) => {
@@ -77,7 +76,6 @@ function tableCategoryUpdate(){
         }
     });
 
-    // Display the "N/A" row when no categories are selected
     const noCategoriesRow = document.querySelector('.js-table-no-categories');
     if (noCategoriesSelected) {
         noCategoriesRow.style.display = 'table-row';
@@ -91,7 +89,9 @@ function tableCategoryUpdate(){
 export function updateTotalBillAndCounts() {
     let totalBill = 0;
     let totalTickets = 0;
+    const tableDate = document.querySelector('.js-table-date').innerHTML;
   
+    
     ticketCategories.forEach((category) => {
         const ticketCount = parseInt(localStorage.getItem(`ticketCount_${category.id}`)) || 0;
         const ticketPrice = parseInt(localStorage.getItem(`ticketPrice_${category.id}`)) || 0;
@@ -100,71 +100,105 @@ export function updateTotalBillAndCounts() {
         totalBill += ticketPrice;
   
         document.querySelector(`.js-table-${category.id}-count`).innerHTML = ticketCount;
-        document.querySelector(`.js-table-${category.id}-price`).innerHTML = `$${ticketPrice}`;
+
+        if (category.id === "inf-3000"){
+            document.querySelector(`.js-table-${category.id}-price`).innerHTML = `Free`;
+        }
+        else{
+            document.querySelector(`.js-table-${category.id}-price`).innerHTML = `$${ticketPrice}`;
+        }
+        
+        localStorage.setItem('totalCount',totalTickets);
     });
   
     document.querySelector(`.js-table-total-count`).innerHTML = totalTickets;
     document.querySelector(`.js-table-total-bill`).innerHTML = `$${totalBill}`;
 
+    updateConfirmButtonButtonStatus(totalBill, tableDate);
+
     if (countTicketExecuted !== true) {
         ticketCategories.forEach((category) => {
             localStorage.setItem(`ticketCount_${category.id}`, 0);
+            document.querySelector(`.${category.id}`).innerHTML = 0;
         });
     }
+
+    localStorage.setItem('totalBill',totalBill);
 }
 /**************** ticket table ****************/
 
-/**************** ticket count HTMl ****************/
-let ticketCounterHTML = '';
+/**************** confirm button ****************/
+const confirmButton = document.querySelector('.js-confirm-button');
 
-ticketCategories.forEach((category) => {
-    const storedCount = parseInt(localStorage.getItem(`ticketCount_${category.id}`)) || 0;
-    category.counter = storedCount;
-
-    ticketCounterHTML += `
-        <div class="ticket-count-main-wrapper">
-            <div class="ticket-count-category">
-                <span>${category.name}</span>
-                <br>
-                <span class="category-tag">${category.tag}</span>
-            </div>
-            <div class="ticket-count-counter">
-                <span id="${category.reset_id}" class="material-symbols-rounded reset-icon js-add-remove" >Refresh</span>
-                <span id="${category.remove_id}" class="material-symbols-rounded js-add-remove" >Remove</span>
-                <span class="count-number ${category.id}" data-ticket-counter="ticket-counter">${category.counter}</span>
-                <span id="${category.add_id}" class="material-symbols-rounded js-add-remove" ">Add</span>
-            </div>
-        </div>
-    `
+confirmButton.addEventListener('click', () => {
+    window.location.href = 'details.html';
 });
 
-document.querySelector('.ticket-count-main-container')
-    .innerHTML = ticketCounterHTML;
+function updateConfirmButtonButtonStatus(totalBill) {
+    if (totalBill > 0) {
+        confirmButton.removeAttribute('disabled');
+    } else {
+        confirmButton.setAttribute('disabled', 'disabled');
+    }
+}
+/**************** confirm button ****************/
 
+/**************** ticket count HTMl ****************/
+function ticketCountHTML(){
+    let ticketCounterHTML = '';
+
+    ticketCategories.forEach((category) => {
+        const storedCount = parseInt(localStorage.getItem(`ticketCount_${category.id}`)) || 0;
+        category.counter = storedCount;
+
+        ticketCounterHTML += `
+            <div class="ticket-count-main-wrapper">
+                <div class="ticket-count-category">
+                    <span>${category.name}</span>
+                    <br>
+                    <span class="category-tag">${category.tag}</span>
+                </div>
+                <div class="ticket-count-counter">
+                    <span id="${category.reset_id}" class="material-symbols-rounded reset-icon js-add-remove" >Refresh</span>
+                    <span id="${category.remove_id}" class="material-symbols-rounded js-add-remove" >Remove</span>
+                    <span class="count-number ${category.id}" data-ticket-counter="ticket-counter">${category.counter}</span>
+                    <span id="${category.add_id}" class="material-symbols-rounded js-add-remove" ">Add</span>
+                </div>
+            </div>
+        `
+    });
+
+    document.querySelector('.ticket-count-main-container')
+        .innerHTML = ticketCounterHTML;
+};
+/**************** ticket count HTMl ****************/
+
+/**************** duration ****************/
+function timeSlotsHTML(){
+    let timeSlotsHTMl = "";
+    const peakIndex = [3, 4, 5, 8, 9, 10];
+
+    peakHours.forEach((timeSlot, index) => {
+        if (peakIndex.includes(index)){
+            timeSlotsHTMl += `
+            <label>
+                <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot peak-slot js-selection">${timeSlot.start} - ${timeSlot.end} ${timeSlot.status}
+            </label> 
+            `
+        }
+        else{
+            timeSlotsHTMl += `
+            <label>
+                <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot js-selection">${timeSlot.start} - ${timeSlot.end}
+            </label> 
+            `
+        }
+    });
+
+    document.querySelector('.dropdown-content')
+        .innerHTML = timeSlotsHTMl;
+}
+/**************** duration ****************/
+ticketCountHTML();
+timeSlotsHTML();
 countTicket();
-/**************** ticket count HTMl ****************/
-
-/**************** duration ****************/
-let timeSlotsHTMl = "";
-const peakIndex = [3, 4, 5, 8, 9, 10];
-
-peakHours.forEach((timeSlot, index) => {
-    if (peakIndex.includes(index)){
-        timeSlotsHTMl += `
-        <label>
-            <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot peak-slot js-selection">${timeSlot.start} - ${timeSlot.end} ${timeSlot.status}
-        </label> 
-        `
-    }
-    else{
-        timeSlotsHTMl += `
-        <label>
-            <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot js-selection">${timeSlot.start} - ${timeSlot.end}
-        </label> 
-        `
-    }
-});
-
-document.querySelector('.dropdown-content')
-    .innerHTML = timeSlotsHTMl;
-/**************** duration ****************/

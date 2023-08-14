@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;700&family=Noto+Emoji&family=Poppins:wght@100;300;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tickets.css">
+    
+    <link rel="icon" href="icons/turtleicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <title>tickets</title>
+
+    <!-- <script type="module" src="/scripts/calendar.js" defer></script>
+    <script type="module" src="/scripts/dropdown.js" defer></script>
+    <script type="module" src="/scripts/tickets.js" defer></script> -->
+    <script type="module" src="/scripts/detail_scripts/detail_form.js" defer></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+        <nav class="nav-bar">
+            <ul class="nav-bar-items">
+                <li><a id="nav-a" class="active" href="index.html">Home</a></li>
+                <li><a href="categories.html">Turtles</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="hikkaduwa.html">Hikkaduwa</a></li>
+                <li>
+                    <a href="#">Other Hatcheries</a>
+                    <ul class="nav-bar-items-2">
+                        <li><a href="kosgoda.html">Kosgoda</a></li>
+                        <li><a href="bentota.html">Bentota</a></li>
+                    </ul>
+                </li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ticket-main-viewport">
+        <div class="ticket-main-viewport-images">
+            <div>
+                <img class="ticket-main-viewport-image" src="images/pexels-malinda-bandara-16508231.webp" alt="">
+            </div>
+        </div>
+        <div class="ticket-main-viewport-header">
+            <div class="ticket-main-viewport-header-text">
+                <span>Buy</span>
+                <h2>Tickets</h2>
+            </div>
+        </div>
+    </div>
+    
+    <section class="details-page-first-section-main-container">
+        <div class="details-form-container">
+            <div>
+                <h3>Enter Your Details</h3>   
+                <hr> 
+            </div>
+            <form id="form" action="/" method="GET">
+                <div class="form-container">
+                    <div class="main-user-info">
+
+                        <div class="details-form-inputbox">
+                            <input id="fullname" name="fullname" type="text" class="my-input" placeholder="Elliot Alderson">
+                            <span>Full Name</span>
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="flag-selecctor">
+                            <div id="flagSelectField">
+                                <p id="select-flag-text">Select Country</p>
+                                <span class="material-symbols-rounded js-flag-arrow">expand_more</span>
+                            </div>
+
+                            <ul id="flag-list" class="hide-flag-list"></ul>
+                        </div>
+                        <div class="details-form-inputbox">
+                            <input id="mobilenumber" type="text" class="my-input" placeholder="123-456-7890" >
+                            <span>Mobile Number</span>
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="details-form-inputbox">
+                            <input id="email" type="email" class="my-input" placeholder="example@gmail.com">
+                            <span>E-mail</span>
+                            <div class="error"></div>
+                        </div>
+                        <div class="details-form-inputbox">
+                            <input id="email2" type="email" class="my-input" placeholder="example@gmail.com">
+                            <span>Confirm E-mail</span>
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="details-form-inputbox gender-list">
+                            <div class="custom-dropdown">
+                                <div class="dropdown-header" id="genderSelectField">
+                                    <p id="select-gender-text">Select Gender</p>
+                                    <span class="material-symbols-rounded js-flag-arrow">expand_more</span>
+                                </div>
+                                <ul class="dropdown-list hide-dropdown-list">
+                                    <li class="dropdown-option">Male</li>
+                                    <li class="dropdown-option">Female</li>
+                                    <li class="dropdown-option">Non-specified</li>
+                                </ul>
+                            </div>
+                            <span>Gender</span>
+                            <div class="error"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <div class="form-submit-button">
+                        <input id="resetButton" type="submit" class="button-for-all-2" value="Submit">
+                    </div>
+                    <div class="form-reset-button">
+                        <input id="submitButton" type="reset" class="button-for-all-2" value="Reset">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="ticket-counter-and-time-slots-container">
+            <div class="table-section">
+                <!-- <div>
+                    <h2>Summary Table</h2>
+                    <hr><br>
+                </div> -->
+                <table class="main-table">
+                    <tbody class="js-table-category-row">
+                        <tr>
+                            <td>Name</td>
+                            <td colspan="2" class="table-count-price-td js-table-name">N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            <td colspan="2" class="table-count-price-td js-table-date">DD : MM : YYYY</td>
+                        </tr>
+                        <tr>
+                            <td>Time</td>
+                            <td colspan="2" class="table-count-price-td js-table-time">N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td colspan="2" class="table-count-price-td js-table-duration">N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td colspan="2" class="table-count-price-td js-table-mobile">N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td colspan="2" class="table-count-price-td js-table-email">N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td colspan="2" class="table-count-price-td js-table-gender">N/A</td>
+                        </tr>
+                        <tr class="middle-title">
+                            <td>Category</td>
+                            <td>Ticket Count</td>
+                            <td>Charges</td>
+                        </tr>
+                        <tr class="js-table-no-categories">
+                            <td>N/A</td>
+                            <td class="table-count-price-td js-table-na-count">N/A</td>
+                            <td class="table-count-price-td js-table-na-price">N/A</td>
+                        </tr>
+                        <tr class="table-category-fade-in">
+                            <td>Sri Lankan Adults</td>
+                            <td class="table-count-price-td js-table-sla-1000-count"></td>
+                            <td class="table-count-price-td js-table-sla-1000-price"></td>  
+                        </tr>
+                        <tr class="table-category-fade-in">
+                            <td>Sri Lankan Child</td>
+                            <td class="table-count-price-td js-table-slc-1001-count"></td>
+                            <td class="table-count-price-td js-table-slc-1001-price"></td>
+                        </tr>
+                        <tr class="table-category-fade-in">
+                            <td>Foreigner Adult</td>
+                            <td class="table-count-price-td js-table-fa-2000-count"></td>
+                            <td class="table-count-price-td js-table-fa-2000-price"></td>
+                        </tr>
+                        <tr class="table-category-fade-in">
+                            <td>Foreigner Child</td>
+                            <td class="table-count-price-td js-table-fc-2001-count"></td>
+                            <td class="table-count-price-td js-table-fc-2001-price"></td>
+                        </tr>
+                        <tr class="table-category-fade-in">
+                            <td>Infant</td>
+                            <td class="table-count-price-td js-table-inf-3000-count"></td>
+                            <td class="table-count-price-td js-table-inf-3000-price"></td>
+                        </tr> 
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total Payable</td>
+                            <td class="table-count-price-td js-table-total-count"></td>
+                            <td class="table-count-price-td js-table-total-bill"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>  
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h1><span class="span-1">Turtle</span><span class="span-2">topia</span></h1>
+                </div>
+    
+                <div class="footer-middle">
+                    <div class="footer-list">
+                        <ul>
+                            <h4>Pages</h4>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="donate.html">Donate</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-list">
+                        <ul>
+                            <h4>Turtles</h4>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="threats.html">Threats</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-list">
+                        <ul>
+                            <h4>Socials</h4>
+                            <li><a href="https://www.facebook.com/">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/">Instagram</a></li>
+                            <li><a href="https://twitter.com/">Twitter</a></li>
+                            <li><a href="https://vimeo.com/">Vimeo</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="footer-social-container">
+                    <div class="footer-social-list">
+                        <a href="https://www.facebook.com/"><img src="icons/facebook.svg" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="icons/instagram.svg" alt=""></a>
+                        <a href="https://twitter.com/"><img src="icons/twitter.svg" alt=""></a>
+                        <a href="https://vimeo.com/"><img src="icons/vimeo-v.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-base">
+                <span>© 2023 Turtletopia.com All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
