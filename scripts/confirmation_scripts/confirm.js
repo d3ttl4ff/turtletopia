@@ -1,5 +1,5 @@
 import { flagListArray } from "/scripts/countries.js";
-import { ticketCategories } from "../ticket_scripts/ticketCategories.js";
+import { ticketCategories } from "/js/ticket_scripts/ticketCategories.js";
 
 const detailDate = document.querySelector('.js-table-date');
 const detailTime = document.querySelector('.js-table-time');
