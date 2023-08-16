@@ -1,4 +1,4 @@
-import { ticketCategories } from "/assets/js/ticketCategories.js";
+import { ticketCategories } from "assets/js/ticketCategories.js";
 
 const form = document.querySelector("#credit-card");
 
