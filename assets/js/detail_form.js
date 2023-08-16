@@ -1,5 +1,5 @@
-import { flagListArray } from "/assets/js/countries";
-import { ticketCategories } from "/assets/js/ticketCategories";
+import { flagListArray } from "/assets/js/countries.js";
+import { ticketCategories } from "/assets/js/ticketCategories.js";
 
 const form = document.getElementById("form");
 const fullname = document.getElementById("fullname");

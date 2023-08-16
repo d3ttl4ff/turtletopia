@@ -1,6 +1,6 @@
-import { ticketCategories } from '/assets/js/ticketCategories';
-import { peakHours } from '/assets/js/peakHours';
-import { updateSelection } from '/assets/js/dropdown';
+import { ticketCategories } from '/assets/js/ticketCategories.js';
+import { peakHours } from '/assets/js/peakHours.js';
+import { updateSelection } from '/assets/js/dropdown.js';
 
 /**************** update time ****************/
 function updateCurrentTime(){
