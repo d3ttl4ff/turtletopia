@@ -1,5 +1,5 @@
-import { flagListArray } from "/scripts/countries.js";
-import { ticketCategories } from "/js/ticket_scripts/ticketCategories.js";
+// import { flagListArray } from "/scripts/countries.js";
+import { ticketCategories } from "../js/ticket_scripts/ticketCategories.js";
 
 const form = document.querySelector("#credit-card");
 
