@@ -37,7 +37,6 @@ mobilenumber.addEventListener("keydown", function(event) {
 
 flagListHTML();
 
-
 const selectFlagText = document.getElementById("select-flag-text");
 const flagOptions = document.querySelectorAll('.flag-options');
 const flagListContainer = document.getElementById("flag-list");
