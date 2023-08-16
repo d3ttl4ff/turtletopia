@@ -1,4 +1,3 @@
-// import { flagListArray } from "/js/scripts/countries.js";
 import { ticketCategories } from "/js/ticket_scripts/ticketCategories.js";
 
 const detailDate = document.querySelector('.js-table-date');
