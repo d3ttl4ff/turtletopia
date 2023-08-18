@@ -1,6 +1,6 @@
-import { ticketCategories } from '/assets/js/ticketCategories.js';
-import { peakHours } from '/assets/js/peakHours.js';
-import { updateSelection } from '/assets/js/dropdown.js';
+import { ticketCategories } from '/turtletopia/assets/js/ticketCategories.js';
+import { peakHours } from '/turtletopia/assets/js/peakHours.js';
+import { updateSelection } from '/turtletopia/assets/js/dropdown.js';
 
 /**************** update time ****************/
 function updateCurrentTime(){
