@@ -5,7 +5,7 @@ const prevNextIcon = document.querySelectorAll('.js-icons span');
 
 currentMonthYear.textContent = `${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(currentDate)}`;
 
-export const renderCalendar = () => {
+const renderCalendar = () => {
     const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
     const prevMonthLastDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);

@@ -1,6 +1,193 @@
-import { ticketCategories } from '/assets/js/ticketCategories.js';
-import { peakHours } from '/assets/js/peakHours.js';
-import { updateSelection } from '/assets/js/dropdown.js';
+/**************** ticket categories ****************/
+let ticketCategories = [
+    {
+        id: "sla-1000",
+        name: "Sri Lankan Adult",
+        tag: "Above 18yrs",
+        remove_id: "sla-1000-remove",
+        add_id: "sla-1000-add",
+        reset_id: "sla-1000-reset",
+        counter: 0,
+        price: {
+            regular_ticket: 4,
+            peak_ticket: 6
+        }
+    },
+    {
+        id: "slc-1001",
+        name: "Sri Lankan Child",
+        tag: "5 to 17yrs",
+        remove_id: "slc-1001-remove",
+        add_id: "slc-1001-add",
+        reset_id: "slc-1001-reset",
+        counter: 0,
+        price: {
+            regular_ticket: 2,
+            peak_ticket: 3
+        }
+    },
+    {
+        id: "fa-2000",
+        name: "Foreigner Adult",
+        tag: "Above 18yrs",
+        remove_id: "fa-2000-remove",
+        add_id: "fa-2000-add",
+        reset_id: "fa-2000-reset",
+        counter: 0,
+        price: {
+            regular_ticket: 10,
+            peak_ticket: 13
+        }
+    },
+    {
+        id: "fc-2001",
+        name: "Foreigner Child",
+        tag: "5 to 17yrs",
+        remove_id: "fc-2001-remove",
+        add_id: "fc-2001-add",
+        reset_id: "fc-2001-reset",
+        counter: 0,
+        price: {
+            regular_ticket: 5,
+            peak_ticket: 8
+        }
+    },
+    {
+        id: "inf-3000",
+        name: "Infant",
+        tag: "Under 4yrs",
+        remove_id: "inf-3000-remove",
+        add_id: "inf-3000-add",
+        reset_id: "inf-3000-reset",
+        counter: 0,
+        price: {
+            regular_ticket: 0,
+            peak_ticket: 0
+        }
+    }
+]
+/**************** ticket categories ****************/
+
+/**************** peak hours ****************/
+const peakHours = [
+    { 
+    start: "07:00 AM", 
+    end: "08:00 AM" 
+},
+{
+    start: "08:00 AM", 
+    end: "09:00 AM"
+},
+{
+    start: "09:00 AM", 
+    end: "10:00 AM"
+},
+{
+    start: "10:00 AM", 
+    end: "11:00 AM",
+    status: "(peak hour)"
+},
+{
+    start: "11:00 AM", 
+    end: "12:00 AM",
+    status: "(peak hour)"
+},
+{
+    start: "12:00 AM", 
+    end: "01:00 PM",
+    status: "(peak hour)"
+},
+{
+    start: "01:00 PM", 
+    end: "02:00 PM"
+},
+{
+    start: "02:00 PM", 
+    end: "03:00 PM"
+},
+{
+    start: "03:00 PM", 
+    end: "04:00 PM",
+    status: "(peak hour)"
+},
+{
+    start: "04:00 PM", 
+    end: "05:00 PM",
+    status: "(peak hour)"
+},
+{
+    start: "05:00 PM", 
+    end: "06:00 PM",
+    status: "(peak hour)"
+}
+]
+/**************** peak hours ****************/
+
+/**************** update selection ****************/
+function updateSelection() {
+    const selectedRegularTimeSlots = [];
+    const selectedPeakTimeSlots = [];
+    const selectedTotalTimeSlots = [];
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let lastSelectedIndex = -1;
+
+    checkboxes.forEach((checkbox, index) => {
+        if (checkbox.checked) {
+            if(lastSelectedIndex === -1 || lastSelectedIndex === index - 1){
+                if(checkbox.classList.contains('peak-slot')){
+                    selectedPeakTimeSlots.push(checkbox.value);
+                    selectedTotalTimeSlots.push(checkbox.value);
+                }
+                else{
+                    selectedRegularTimeSlots.push(checkbox.value);
+                    selectedTotalTimeSlots.push(checkbox.value);
+                }
+                lastSelectedIndex = index;
+            }
+            else{
+                checkbox.checked = false;
+            }
+        }
+        else if (index === lastSelectedIndex) {
+            lastSelectedIndex = -1;
+        } 
+    });
+    
+    ticketCategories.forEach((category) => {
+        const ticketCount = parseInt(localStorage.getItem(`ticketCount_${category.id}`)) || 0;
+
+        const regularTicketPrice = ticketCount * selectedRegularTimeSlots.length * category.price.regular_ticket;
+        const peakTicketPrice = ticketCount * selectedPeakTimeSlots.length * category.price.peak_ticket;
+        const totalTicketPrice = regularTicketPrice + peakTicketPrice;
+    
+        localStorage.setItem(`ticketPrice_${category.id}`, totalTicketPrice);
+    });
+
+    if (selectedRegularTimeSlots.length > 0 || selectedPeakTimeSlots.length > 0) {
+        const startTime = selectedTotalTimeSlots[0].split(" - ")[0]; // Get start time of the top-most item
+        const endTime = selectedTotalTimeSlots[selectedTotalTimeSlots.length - 1].split(" - ")[1]; // Get end time of the bottom-most item
+        const selectedText = `${startTime} - ${endTime}`;
+
+        const regular = selectedRegularTimeSlots.length;
+        const peak = selectedPeakTimeSlots.length;
+        const total = selectedTotalTimeSlots.length;
+
+        document.querySelector('.selected-text').textContent = selectedText;
+        document.querySelector('.js-table-time').innerHTML = selectedText;
+        document.querySelector('.js-table-duration').innerHTML = `${total} hrs (${regular} Normal : ${peak} Peak)`;
+    } 
+    else {
+        document.querySelector('.selected-text').textContent = 'Select Time Slots';
+        document.querySelector('.js-table-time').innerHTML = 'N/A';
+        document.querySelector('.js-table-duration').innerHTML = 'N/A';
+    }  
+
+    let timeSlots = document.querySelector('.js-table-duration').innerHTML;
+    let duration = document.querySelector('.js-table-time').innerHTML;
+    localStorage.setItem('time_slots', timeSlots);
+    localStorage.setItem('duration', duration);
+};
+/**************** update selection ****************/
 
 /**************** update time ****************/
 function updateCurrentTime(){
@@ -26,7 +213,7 @@ setInterval(updateCurrentTime, 1);
 
 /**************** ticket count ****************/
 let countTicketExecuted = false;
-export function countTicket(){
+function countTicket(){
     const addRemoveIcons = document.querySelectorAll('.js-add-remove');
 
     ticketCategories.forEach((category) => {
@@ -62,7 +249,7 @@ export function countTicket(){
 /**************** ticket count ****************/
 
 /**************** ticket table category update ****************/
-export function tableCategoryUpdate(){
+function tableCategoryUpdate(){
     let noCategoriesSelected = true;
 
     ticketCategories.forEach((category) => {
@@ -86,7 +273,7 @@ export function tableCategoryUpdate(){
 /**************** ticket table category update ****************/
 
 /**************** ticket table ****************/
-export function updateTotalBillAndCounts() {
+function updateTotalBillAndCounts() {
     let totalBill = 0;
     let totalTickets = 0;
     const tableDate = document.querySelector('.js-table-date').innerHTML;
