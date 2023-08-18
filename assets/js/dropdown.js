@@ -7,7 +7,7 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
-export function realDropdown(){
+function realDropdown(){
     const toggle = document.querySelector('.select-box');
     
     toggle.addEventListener('click', () => {
@@ -79,7 +79,7 @@ export function updateSelection() {
     localStorage.setItem('duration', duration);
 };
 
-export function updateDuration(){
+function updateDuration(){
     const checkbox = document.querySelectorAll('.js-selection');
     checkbox.forEach((checkbox) => {
         checkbox.addEventListener('change', () => {
