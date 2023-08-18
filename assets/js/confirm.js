@@ -1,4 +1,4 @@
-import { ticketCategories } from "/assets/js/ticketCategories.js";
+import { ticketCategories } from "../js/ticketCategories.js";
 
 const detailDate = document.querySelector('.js-table-date');
 const detailTime = document.querySelector('.js-table-time');
