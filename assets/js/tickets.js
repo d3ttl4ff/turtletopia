@@ -26,7 +26,7 @@ setInterval(updateCurrentTime, 1);
 
 /**************** ticket count ****************/
 let countTicketExecuted = false;
-export function countTicket(){
+function countTicket(){
     const addRemoveIcons = document.querySelectorAll('.js-add-remove');
 
     ticketCategories.forEach((category) => {
