@@ -35,6 +35,25 @@
       {
         "image-alt": "off"
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-webkit-text-size-adjust",
+          "-ms-flex",
+          "-ms-touch-action",
+          "-webkit-user-modify",
+          "overscroll-behavior",
+          "scrollbar-width",
+          "scrollbar-color",
+          "-webkit-overflow-scrolling",
+          "-webkit-tap-highlight-color",
+          "-webkit-mask-box-image",
+          "overflow: clip",
+          "backdrop-filter"
+        ]
+      }
     ]
   }
 }
