@@ -1,5 +1,5 @@
-import { ticketCategories } from '/assets/js/ticketCategories.js';
-import { updateTotalBillAndCounts, tableCategoryUpdate } from '/assets/js/tickets.js';
+import { ticketCategories } from '/turtletopia/assets/js/ticketCategories.js';
+import { updateTotalBillAndCounts, tableCategoryUpdate } from '/turtletopia/assets/js/tickets.js';
 
 function toggleDropdown() {
     const dropdownContent = document.querySelector('.dropdown-content');
