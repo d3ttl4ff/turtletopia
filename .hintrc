@@ -14,7 +14,8 @@
       "default",
       {
         "ignore": [
-          "iframe[loading]"
+          "iframe[loading]",
+          "meta[name=theme-color]"
         ]
       }
     ],
@@ -53,6 +54,13 @@
           "overflow: clip",
           "backdrop-filter"
         ]
+      }
+    ],
+    "button-type": "off",
+    "axe/keyboard": [
+      "default",
+      {
+        "nested-interactive": "off"
       }
     ]
   }
