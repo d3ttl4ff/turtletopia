@@ -81,27 +81,28 @@ const detailMobile = document.querySelector('.js-table-mobile');
 const detailEmail = document.querySelector('.js-table-email');
 const detailGender = document.querySelector('.js-table-gender');
 
-detailDate.innerHTML = localStorage.getItem('selected_DD_MM_YY');
-detailTime.innerHTML = localStorage.getItem('duration');
-detailDuration.innerHTML = localStorage.getItem('time_slots');
-detailTotalTickets.innerHTML = localStorage.getItem('totalCount');
-detailTotalBill.innerHTML = "$" + localStorage.getItem('totalBill');
-detailMobile.innerHTML = localStorage.getItem('mobileNumber');
-detailName.innerHTML = localStorage.getItem('fullName');
-detailEmail.innerHTML = localStorage.getItem('email');
-detailGender.innerHTML = localStorage.getItem('selectedGender');
+detailDate.innerHTML = localStorage.getItem('selected_DD_MM_YY') || 'N/A';
+detailTime.innerHTML = localStorage.getItem('duration') || 'N/A';
+detailDuration.innerHTML = localStorage.getItem('time_slots') || 'N/A';
+detailTotalTickets.innerHTML = localStorage.getItem('totalCount') || 'N/A';
+detailTotalBill.innerHTML = "$" + (localStorage.getItem('totalBill') || 'N/A');
+detailMobile.innerHTML = localStorage.getItem('mobileNumber') || 'N/A';
+detailName.innerHTML = localStorage.getItem('fullName') || 'N/A';
+detailEmail.innerHTML = localStorage.getItem('email') || 'N/A';
+detailGender.innerHTML = localStorage.getItem('selectedGender') || 'N/A';
 
 ticketCategories.forEach((category) => {
     const ticketCount = document.querySelector(`.js-table-${category.id}-count`);
     const ticketPrice = document.querySelector(`.js-table-${category.id}-price`);
 
-    ticketCount.innerHTML = localStorage.getItem(`ticketCount_${category.id}`);
+    ticketCount.innerHTML = localStorage.getItem(`ticketCount_${category.id}`) || 'N/A';
 
     if(category.id == 'inf-3000'){
         ticketPrice.innerHTML = `Free`
     }
     else{
-        ticketPrice.innerHTML = '$' + localStorage.getItem(`ticketPrice_${category.id}`);
+      const storedTicketPrice = localStorage.getItem(`ticketPrice_${category.id}`);
+      ticketPrice.innerHTML = storedTicketPrice ? `$${storedTicketPrice}` : 'N/A';
     }
 })
 

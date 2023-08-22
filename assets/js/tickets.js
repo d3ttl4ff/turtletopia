@@ -181,15 +181,17 @@ function timeSlotsHTML(){
     peakHours.forEach((timeSlot, index) => {
         if (peakIndex.includes(index)){
             timeSlotsHTMl += `
-            <label>
-                <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot peak-slot js-selection">${timeSlot.start} - ${timeSlot.end} ${timeSlot.status}
+            <label class="custom-checkbox">
+                <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot peak-slot js-selection">
+                <span class="checkmark"></span>${timeSlot.start} - ${timeSlot.end} ${timeSlot.status}
             </label> 
             `
         }
         else{
             timeSlotsHTMl += `
-            <label>
-                <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot js-selection">${timeSlot.start} - ${timeSlot.end}
+            <label class="custom-checkbox">
+                <input type="checkbox" name="item" value="${timeSlot.start} - ${timeSlot.end}" class="time-slot js-selection">
+                <span class="checkmark"></span>${timeSlot.start} - ${timeSlot.end}
             </label> 
             `
         }
