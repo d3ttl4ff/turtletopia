@@ -80,7 +80,7 @@ header .nav-bar ul li ul li{
 }
 
 header .nav-bar ul li ul li a{
-    color: black;
+    color: var(--primary-black);
 }
 
 header .nav-bar ul li:focus-within > ul,
@@ -161,8 +161,8 @@ header.scrolled {
 }
 
 header.scrolled .nav-bar ul li a {
-    color: black;
-    font-weight: 600;
+    color: var(--primary-black);
+    font-weight: 400;
 }
 
 header .nav-bar ul li a:hover {
