@@ -89,7 +89,7 @@ img{
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 320px) {
     .gallery-main-container{
         grid-template-columns: 1fr;
     }
