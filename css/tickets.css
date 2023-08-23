@@ -669,7 +669,7 @@ tbody .middle-title:nth-child(odd) {
 .middle-title,
 tfoot{
     /* background-color: var(--mint); */
-    background: linear-gradient(315deg, rgba(196, 232, 194, 1), rgba(62, 140, 143, 0.7));;
+    background: linear-gradient(315deg, rgba(196, 232, 194, 1), rgba(62, 140, 143, 0.8));;
     color: var(--primary-black);
 }
 
