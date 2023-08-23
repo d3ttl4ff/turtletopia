@@ -13,6 +13,7 @@
     --title-font-size: 20px;
 
     --box-shadow-main: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    --box-shadow-gradient: 0px 15px 20px rgba(107, 189, 153, 0.2);
 }
 
 /**************** main viewport ****************/
@@ -179,6 +180,7 @@
 /**************** ticket page: date section ****************/
 .ticket-date-main-wrapper{
     background: var(--main-gradient);
+    box-shadow: 0px 15px 20px rgba(107, 189, 153, 0.2);
     max-width: 450px;
     border-radius: 10px;
 
@@ -376,14 +378,21 @@
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Back to the initial glow */
     }
 }
+
+@media only screen and (max-width:434px){
+    .ticket-date-calendar-header .icons{
+        display: flex;
+    }
+}
 /**************** ticket page: date section ****************/
 
 /**************** ticket page: count section ****************/
 .ticket-coounter-dropdown-wrapper{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    column-gap: 100px;
     justify-content: center;
-    align-items: center;
+    align-items: top;
 }
 
 .ticket-count-main-container{
@@ -396,7 +405,7 @@
 
 .ticket-count-main-wrapper{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -405,12 +414,34 @@
 .ticket-count-category{
     margin-right: 40px;
     width: 200px;
+    max-width: 450px;
     text-align: left;
 }
 
 .category-tag{
     font-size: 13px;
     color: var(--primary-grey);
+}
+
+@media screen and (max-width: 942px) {
+    .ticket-count-category{
+        margin-right: 0;
+        width: 200px;
+        max-width: 450px;
+        text-align: center;
+    }
+
+    .ticket-count-main-wrapper{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 942px) {
+    .ticket-coounter-dropdown-wrapper{
+        /* display: flex; */
+        flex-direction: column;
+        
+    }
 }
 
 .ticket-count-counter .count-number {
@@ -482,7 +513,8 @@
 }
 
 .select-box {
-    background-color: var(--persian-green);
+    /* background-color: var(--persian-green); */
+    background: var(--main-gradient);
     display: flex;
     align-items: center;
     padding: 10px;
@@ -492,7 +524,7 @@
 }
 
 .select-box:hover{
-    box-shadow: 0 0 20px 0px rgba(62, 140, 143, 0.7);
+    box-shadow: var(--box-shadow-gradient);
 }
 
 .selected-text {
@@ -670,7 +702,6 @@ tbody .middle-title:nth-child(odd) {
 
 .middle-title,
 tfoot{
-    /* background-color: var(--mint); */
     background: linear-gradient(315deg, rgba(196, 232, 194, 1), rgba(62, 140, 143, 0.8));;
     color: var(--primary-black);
 }
@@ -701,47 +732,6 @@ tfoot{
         width: 250px;
     }
 }
-
-/* @media only screen and (max-width: 400px) {
-    .table-section{
-        padding: 10px;
-    }
-
-    table{
-        border: 3px solid rgb(26, 26, 26);
-    }
-
-    table thead tr{
-        display: none;
-    }
-
-    table tr{
-        display: block;
-    }
-
-    table td{
-        padding: .5em;
-    }
-
-    table td{
-        text-align: left;
-        display: block;
-    }
-
-    table td:before{
-        content: attr(data-title) "\00A0 : \00A0";
-        float: left;
-    }
-
-    tbody tr:nth-child(even){
-        background-color: var(--persian-green);
-        color: var(--primary-white);
-    }
-
-    table td {
-        max-width: 100%;
-    }
-} */
 /**************** ticket page: duration section ****************/
 
 /**************** ticket page: confirm-button ****************/
@@ -845,7 +835,7 @@ tfoot{
     background-color: var(--primary-white);
     padding: 50px 50px 0;
     display: flex;
-    column-gap: 100px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -1023,6 +1013,7 @@ tfoot{
     height: 0;
     z-index: 1;
     margin-bottom: 50px;
+    transition: 0.3s ease-out;
 }
 
 #flagSelectField{
@@ -1113,6 +1104,7 @@ tfoot{
 .gender-list{
     display: flex;
     justify-content: center;
+    transition: 0.3s ease-out;
 }
 
 .custom-dropdown {
@@ -1190,6 +1182,26 @@ tfoot{
     visibility: visible;
     transition: opacity 0.3s, visibility 0s;
 }
+
+@media only screen and (max-width: 375px){
+    .details-form-inputbox input{
+        width: 250px;
+    }
+
+    .flag-selecctor{
+        width: 250px;
+    }
+
+    .gender-list {
+        width: 250px;
+    }
+}
+
+@media only screen and (min-width: 1450px){
+    .details-page-first-section-main-container{
+        column-gap: 100px;
+    }
+}
 /**************** details page: first section ****************/
 
 /**************** ## ****************/
@@ -1207,7 +1219,6 @@ tfoot{
 }
 
 .payment-container{
-    background-color: var(--persian-green);
     display: flex;
     justify-content: center;
     column-gap: 100px;
@@ -1218,6 +1229,8 @@ tfoot{
     /* width: 100%; */
     height: 100%;
     margin: 3% auto;
+    position: relative;
+    margin-bottom: 100px;
 }
 
 .ui {
@@ -1225,13 +1238,57 @@ tfoot{
     box-shadow: 0 0 10*x 0 var(--persian-green);
     border-radius: 8px;
     width: 80%;
-    margin: 0 auto;
+    margin: 100px auto 0;
     padding: 30px;
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
     
     background-color: var(--persian-green);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .container::before{
+        content: 'PAYMENT';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 105%;
+        background: var(--main-gradient);
+        border-radius: 5px;
+        
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        z-index: 1;
+        transition: 0.3s ease-in-out;
+    }
+
+    .container::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 110%;
+        background: var(--main-gradient);
+        border-radius: 5px;
+        filter: blur(30px);
+        transition: 0.3s ease-in-out;
+    }
+    
+    .ui {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        transition: 0.1s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
 }
 
 .container-left {
@@ -1285,6 +1342,18 @@ tfoot{
     background-color: var(--primary-white);
     cursor: pointer;
     margin-top: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+#credit-card input[type="submit"]:hover {
+    /* background-color: #23c483; */
+    box-shadow: var(--box-shadow-main);
+    color: var(--persian-green);
+    transform: translateY(-2px);
+}
+
+#credit-card input[type="submit"]:active {
+    transform: scale(0.95);
 }
 
 @media screen and (max-width: 895px) {
@@ -1299,6 +1368,12 @@ tfoot{
 
     .payment-container{
         margin-top: 50px;
+    }
+
+    .container::before,
+    .container::after{
+        width: 100%;
+        height: 35%;
     }
 }
 /**************** payment page ****************/
@@ -1331,4 +1406,32 @@ tfoot{
 
 .confirmation-container h2{
     color: var(--primary-black);
+}
+
+@media screen and (max-width: 960px) {
+    .confirmation-page-first-section-main-container h2{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 518px) {
+    .qwe .js-back-details-button{
+        font-size: 14px;
+    }
+
+    .confirmation-page-first-section-main-container h2{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 348px) {
+    .confirmation-page-first-section-main-container{
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .qwe{
+        flex-direction: column;
+    }
 }

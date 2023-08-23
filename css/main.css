@@ -141,6 +141,10 @@ header label:hover{
         align-items: center;
     }
 
+    header .nav-bar ul li a{
+        color: var(--primary-black);
+    }
+
     header .nav-bar ul li ul{
         position: relative;
         width: 100%;
