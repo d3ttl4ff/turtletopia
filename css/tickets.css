@@ -6,6 +6,7 @@
     --mint: rgba(107, 189, 153, 1);
     --celadon: rgba(174, 207, 164, 1);
     --tea-green: rgba(196, 232, 194, 1);
+    --main-gradient: linear-gradient(315deg, rgba(196, 232, 194, 1), rgb(62, 140, 143));
     --letter-space: 5px;
     --line-height: 28px;
     --title-margin-bottom: 50px;
@@ -177,9 +178,33 @@
 
 /**************** ticket page: date section ****************/
 .ticket-date-main-wrapper{
-    background-color: var(--persian-green);
+    background: var(--main-gradient);
     max-width: 450px;
     border-radius: 10px;
+
+    position: relative;
+    transition: 0.5s;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .ticket-date-main-wrapper::after {
+        content: ' ';
+        position: absolute;
+        top: 25%;
+        left: -50px;
+        width: 110%;
+        height: 290px;
+        text-decoration: none;
+        border-radius: 8px;
+        transform: skewX(0deg);
+        transition: 0.5s;
+
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .ticket-date-calendar-header{
@@ -308,7 +333,7 @@
 
 .days li:hover::before{
     background: var(--primary-white);
-    box-shadow: 0 0 20px 0px rgba(239, 239, 239, 0.7);
+    box-shadow: 0 0 20px 0px rgba(228, 228, 228, 0.7);
 }
 
 .days .clicked::before{
@@ -642,9 +667,10 @@ tbody .middle-title:nth-child(odd) {
 }
 
 .middle-title,
-tfoot td{
-    background-color: var(--persian-green);
-    color: var(--primary-white);
+tfoot{
+    /* background-color: var(--mint); */
+    background: linear-gradient(315deg, rgba(196, 232, 194, 1), rgba(62, 140, 143, 0.7));;
+    color: var(--primary-black);
 }
 
 .js-table-no-categories{

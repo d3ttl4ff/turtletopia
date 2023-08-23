@@ -10,6 +10,7 @@
     --line-height: 28px;
     --title-margin-bottom: 50px;
     --title-font-size: 20px;
+    --main-gradient: linear-gradient(315deg, rgba(196, 232, 194, 1), rgb(62, 140, 143));
 
     --box-shadow-main: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
