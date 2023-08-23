@@ -6,12 +6,14 @@
     --mint: rgba(107, 189, 153, 1);
     --celadon: rgba(174, 207, 164, 1);
     --tea-green: rgba(196, 232, 194, 1);
+    --main-gradient: linear-gradient(315deg, rgba(196, 232, 194, 1), rgb(62, 140, 143));
     --letter-space: 5px;
     --line-height: 28px;
     --title-margin-bottom: 50px;
     --title-font-size: 20px;
 
-    --box-shadow-main: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    --box-shadow-main: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    --box-shadow-gradient: 0px 15px 20px rgba(107, 189, 153, 0.2);
 }
 
 .kosgoda-first hr{
@@ -224,7 +226,7 @@ p {
 
 /**************** kosgoda third section ****************/
 .kosgoda-third {
-    background-color: var(--persian-green);
+    background: var(--main-gradient);
 }
 
 .kosgoda-third-container,
@@ -283,6 +285,7 @@ p {
 .kosgoda-third-item-three h4,
 .kosgoda-third-item-four h4{
     color: var(--primary-white);
+    font-weight: 400;
 }
 
 .kosgoda-third-container img {

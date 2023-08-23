@@ -188,7 +188,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   }
+}
 
 .bentota-second-text-container {
     display: flex;
@@ -205,6 +205,14 @@ p {
 .bentota-second-first-image-container,
 .bentota-second-second-image-container{
     display: none
+}
+
+@media only screen and (max-width: 1143px){
+    .box .content {
+        height: 200px;
+    }
+
+    
 }
 
 @media only screen and (max-width: 900px) {

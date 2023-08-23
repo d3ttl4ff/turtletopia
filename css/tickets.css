@@ -192,20 +192,29 @@
 
 @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
     .ticket-date-main-wrapper::after {
-        content: ' ';
+        content: 'CALENDAR';
         position: absolute;
         top: 25%;
-        left: -50px;
-        width: 110%;
+        left: -75px;
+        width: 120%;
         height: 290px;
         text-decoration: none;
         border-radius: 8px;
-        transform: skewX(0deg);
         transition: 0.5s;
 
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        color: var(--primary-black);
+        font-size: 19px;
+        padding-right: 20px;
+        letter-spacing: 8px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-orientation: mixed;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -1377,6 +1386,8 @@ tfoot{
     }
 }
 /**************** payment page ****************/
+
+/**************** confirmation page ****************/
 .confirmation-page-first-section-main-container{
     background-color: var(--primary-white);
     padding: 50px;
@@ -1435,3 +1446,4 @@ tfoot{
         flex-direction: column;
     }
 }
+/**************** confirmation page ****************/
