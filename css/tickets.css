@@ -440,6 +440,7 @@
 
 .ticket-count-main-wrapper .material-symbols-rounded:hover{
     box-shadow: 0 0 20px 0px rgba(62, 140, 143, 0.7);
+    transform: rotate(180deg);
 }
 
 .ticket-count-main-wrapper .reset-icon{
@@ -454,6 +455,7 @@
     transition: 0.15s ease;
     color: var(--primary-black);
     background: var(--persian-green);
+    transition: 0.15s ease-in-out;
 }
 /**************** ticket page: count section ****************/
 
@@ -486,6 +488,7 @@
     padding: 10px;
     cursor: pointer;
     transition: 0.15s ease;
+    border-radius: 5px;
 }
 
 .select-box:hover{
@@ -576,7 +579,6 @@
     margin-right: 30px;
   }
   
-  /* When the checkbox is checked, add a blue background */
   .custom-checkbox input:checked ~ .checkmark {
     background-color: var(--persian-green);
   }
