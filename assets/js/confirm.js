@@ -44,3 +44,6 @@ backPaymentButton.addEventListener('click', () => {
 backHikkaduwaButton.addEventListener('click', () => {
     window.location.href = 'hikkaduwa.html';
 });
+
+
+

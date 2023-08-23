@@ -197,7 +197,7 @@
         top: 25%;
         left: -75px;
         width: 120%;
-        height: 290px;
+        height: 320px;
         text-decoration: none;
         border-radius: 8px;
         transition: 0.5s;
@@ -251,6 +251,7 @@
 
 .ticket-date-calendar-body{
     padding: 20px;
+    height: 420px;
 }
 
 .ticket-date-calendar-body ul{
@@ -357,7 +358,7 @@
     background-color: var(--primary-black);
     border: none;
     border-radius: 100px;
-    margin: 40px auto 20px;
+    margin: 70px auto 20px;
     width: 250px;
     position: relative;
 }
@@ -366,6 +367,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 23;
 }
 
 .ticket-date-calendar-time.js-calendear-time {
