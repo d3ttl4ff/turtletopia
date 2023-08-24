@@ -49,7 +49,7 @@ flagOptions.forEach(option => {
 
         if (countryCode) {
             const mobileCode = flagListArray[countryCode].mobileCode;
-            const maxMobileLength = mobileCode.length === 4 ? 14 : 13;
+            const maxMobileLength = mobileCode.length === 4 ? 12 : 11;
 
             document.getElementById("mobilenumber").value = "+" + flagListArray[countryCode].mobileCode;
             mobilenumber.maxLength = maxMobileLength;
