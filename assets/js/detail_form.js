@@ -190,7 +190,7 @@ function flagListHTML(){
 
         flagListHTML += `
             <li class="flag-options">
-                <img src="/svgs/${ISO2}.svg" alt="${ISO2}">
+                <img src="svgs/${ISO2}.svg" alt="${ISO2}">
                 <p>${country}</p>
                 <span>+${mobileCode}</span>
             </li>
