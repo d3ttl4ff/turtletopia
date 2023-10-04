@@ -11,14 +11,14 @@ Welcome to the Sri Lanka Turtle Conservation Website! This minimalistic website 
   - [Features](#features)
   - [Pages](#pages)
 
-![Website Screenshot_2](/thumbnails/thumb_trtle_2.png)
-
 ## Features
 
 - Responsive design for seamless viewing on various devices.
 - Minimalistic and fluid UI/UX for an intuitive user experience.
 - Utilizes HTML, CSS, and JavaScript to handle various functionalities.
 - Incorporates JavaScript objects and JSON data for data management.
+
+![Website Screenshot_2](/thumbnails/thumb_trtle_2.png)
 
 ## Pages
 
