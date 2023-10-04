@@ -24,5 +24,5 @@ Welcome to the Sri Lanka Turtle Conservation Website! This minimalistic website 
 - **`Categories Page`:** Categorizes information about turtle species.
 - **`Gallery Page`:** Showcases images and videos of turtles in their natural habitat.
 - **`Threats Page`:** Discusses the challenges and threats turtles face.
-- **`Hikkaduwa, Bentota, Kosgoda Hatchery Pages``:** Dedicated pages for each hatchery.
+- **`Hikkaduwa, Bentota, Kosgoda Hatchery Pages`:** Dedicated pages for each hatchery.
 - **`Ticket Page`:** Allows visitors to book tickets to visit hatcheries.
