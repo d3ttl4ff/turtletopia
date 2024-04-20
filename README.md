@@ -1,4 +1,17 @@
-# Tutletopia - Sri Lanka Turtle Conservation Website
+<div align="center">
+  <h1>
+    Tutletopia
+  </h1>
+  <h2>
+    Sri Lanka Turtle Conservation Website
+  </h2>
+</div>div>
+
+<p align="center">
+  <a href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=html,css,js,vscode&theme=dark" />
+  </a>
+</p>
 
 ![Website Screenshot](/thumbnails/thumb_trtle.png)
 ![Website Screenshot_2](/thumbnails/thumb_trtle_2.png)
