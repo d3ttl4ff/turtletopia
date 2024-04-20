@@ -6,7 +6,7 @@
   </a>
 </p>
 
-Welcome to the Sri Lanka Turtle Conservation Website! This minimalistic website is designed with HTML5,CSS and Javascript to showcase the beauty of Sri Lanka's turtle habitat and educate visitors about the conservation efforts in place. It provides valuable information about turtle species, threats they face, and opportunities to visit turtle hatcheries in Hikkaduwa, Bentota, and Kosgoda.
+Welcome to the Sri Lanka Turtle Conservation Website! This minimalistic website is designed with `HTML5`, `CSS` and `Javascript` to showcase the beauty of Sri Lanka's turtle habitat and educate visitors about the conservation efforts in place. It provides valuable information about turtle species, threats they face, and opportunities to visit turtle hatcheries in Hikkaduwa, Bentota, and Kosgoda.
 
 ![Website Screenshot](/thumbnails/thumb_trtle.png)
 ![Website Screenshot_2](/thumbnails/thumb_trtle_2.png)
