@@ -1,5 +1,4 @@
-<h1 align="center">Tutletopia</h1>
-<h2 align="center">Sri Lanka Turtle Conservation Website</h2>
+<h1 align="center">Tutletopia - Sri Lanka Turtle Conservation Website</h1>
 
 <p align="center">
   <a href="https://skillicons.dev">
